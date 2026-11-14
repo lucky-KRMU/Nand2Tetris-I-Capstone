@@ -34,5 +34,6 @@ CHIP Memory {
     Screen(in=in, load=loadScreen, address=address[0..12], out=outScreen);
     Keyboard(out=outKbd);
 
-    Mux4Way16(a=outRAM, b=outRAM, c=outScreen, d=outKbd, sel=address[13..14], out=out);
+    Mux16(a=outScreen, b=outKbd, sel=address[13], out=outIO);
+    Mux16(a=outRAM, b=outIO, sel=address[14], out=out);
 }
