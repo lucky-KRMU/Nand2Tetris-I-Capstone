@@ -1,0 +1,46 @@
+==================================================
+Hack Assembler Symbol Table (K mod 3 = 0)
+==================================================
+
+--- USER-DEFINED LABELS (ROM Addresses) ---
+  (LABEL) MAIN_LOOP            -> ROM[0] (0x0000)
+  (LABEL) KEY_PRESSED          -> ROM[8] (0x0008)
+  (LABEL) START_DRAW           -> ROM[10] (0x000A)
+  (LABEL) ROW_LOOP             -> ROM[18] (0x0012)
+
+--- USER-DEFINED VARIABLES (RAM Addresses) ---
+  (VAR)   color                -> RAM[16] (0x0010)
+  (VAR)   row_count            -> RAM[17] (0x0011)
+  (VAR)   row_addr             -> RAM[18] (0x0012)
+
+--- COMPLETE RESOLVED SYMBOL TABLE ---
+  MAIN_LOOP            : 0      [LABEL]
+  R0                   : 0      [PREDEFINED]
+  SP                   : 0      [PREDEFINED]
+  LCL                  : 1      [PREDEFINED]
+  R1                   : 1      [PREDEFINED]
+  ARG                  : 2      [PREDEFINED]
+  R2                   : 2      [PREDEFINED]
+  R3                   : 3      [PREDEFINED]
+  THIS                 : 3      [PREDEFINED]
+  R4                   : 4      [PREDEFINED]
+  THAT                 : 4      [PREDEFINED]
+  R5                   : 5      [PREDEFINED]
+  R6                   : 6      [PREDEFINED]
+  R7                   : 7      [PREDEFINED]
+  KEY_PRESSED          : 8      [LABEL]
+  R8                   : 8      [PREDEFINED]
+  R9                   : 9      [PREDEFINED]
+  R10                  : 10     [PREDEFINED]
+  START_DRAW           : 10     [LABEL]
+  R11                  : 11     [PREDEFINED]
+  R12                  : 12     [PREDEFINED]
+  R13                  : 13     [PREDEFINED]
+  R14                  : 14     [PREDEFINED]
+  R15                  : 15     [PREDEFINED]
+  color                : 16     [VARIABLE]
+  row_count            : 17     [VARIABLE]
+  ROW_LOOP             : 18     [LABEL]
+  row_addr             : 18     [VARIABLE]
+  SCREEN               : 16384  [PREDEFINED]
+  KBD                  : 24576  [PREDEFINED]
