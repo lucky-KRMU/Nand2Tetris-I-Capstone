@@ -1,0 +1,1824 @@
+==================================================
+Hack Assembler Symbol Table (K mod 3 = 0)
+==================================================
+
+--- USER-DEFINED LABELS (ROM Addresses) ---
+  (LABEL) END_EQ               -> ROM[19] (0x0013)
+  (LABEL) END_GT               -> ROM[35] (0x0023)
+  (LABEL) END_LT               -> ROM[51] (0x0033)
+  (LABEL) RET_ADDRESS_CALL0    -> ROM[145] (0x0091)
+  (LABEL) ball.new             -> ROM[145] (0x0091)
+  (LABEL) RET_ADDRESS_CALL1    -> ROM[163] (0x00A3)
+  (LABEL) RET_ADDRESS_CALL2    -> ROM[333] (0x014D)
+  (LABEL) ball.dispose         -> ROM[346] (0x015A)
+  (LABEL) RET_ADDRESS_CALL3    -> ROM[376] (0x0178)
+  (LABEL) ball.show            -> ROM[387] (0x0183)
+  (LABEL) RET_ADDRESS_CALL4    -> ROM[418] (0x01A2)
+  (LABEL) RET_ADDRESS_CALL5    -> ROM[441] (0x01B9)
+  (LABEL) ball.hide            -> ROM[452] (0x01C4)
+  (LABEL) RET_ADDRESS_CALL6    -> ROM[480] (0x01E0)
+  (LABEL) RET_ADDRESS_CALL7    -> ROM[503] (0x01F7)
+  (LABEL) ball.draw            -> ROM[514] (0x0202)
+  (LABEL) RET_ADDRESS_CALL8    -> ROM[588] (0x024C)
+  (LABEL) ball.getleft         -> ROM[599] (0x0257)
+  (LABEL) ball.getright        -> ROM[620] (0x026C)
+  (LABEL) ball.setdestination  -> ROM[652] (0x028C)
+  (LABEL) LOOP_ball.setdestination -> ROM[654] (0x028E)
+  (LABEL) RET_ADDRESS_CALL9    -> ROM[747] (0x02EB)
+  (LABEL) RET_ADDRESS_CALL10   -> ROM[774] (0x0306)
+  (LABEL) RET_ADDRESS_LT0      -> ROM[798] (0x031E)
+  (LABEL) ball.setdestination$if_true0 -> ROM[826] (0x033A)
+  (LABEL) RET_ADDRESS_LT1      -> ROM[886] (0x0376)
+  (LABEL) RET_ADDRESS_LT2      -> ROM[916] (0x0394)
+  (LABEL) ball.setdestination$if_false0 -> ROM[930] (0x03A2)
+  (LABEL) RET_ADDRESS_LT3      -> ROM[948] (0x03B4)
+  (LABEL) RET_ADDRESS_LT4      -> ROM[979] (0x03D3)
+  (LABEL) ball.setdestination$if_end0 -> ROM[991] (0x03DF)
+  (LABEL) RET_ADDRESS_CALL11   -> ROM[1016] (0x03F8)
+  (LABEL) RET_ADDRESS_CALL12   -> ROM[1062] (0x0426)
+  (LABEL) RET_ADDRESS_CALL13   -> ROM[1109] (0x0455)
+  (LABEL) ball.move            -> ROM[1126] (0x0466)
+  (LABEL) RET_ADDRESS_CALL14   -> ROM[1156] (0x0484)
+  (LABEL) RET_ADDRESS_LT5      -> ROM[1178] (0x049A)
+  (LABEL) ball.move$if_true0   -> ROM[1185] (0x04A1)
+  (LABEL) ball.move$if_false0  -> ROM[1219] (0x04C3)
+  (LABEL) ball.move$if_true1   -> ROM[1267] (0x04F3)
+  (LABEL) ball.move$if_true2   -> ROM[1283] (0x0503)
+  (LABEL) ball.move$if_false2  -> ROM[1309] (0x051D)
+  (LABEL) ball.move$if_end2    -> ROM[1333] (0x0535)
+  (LABEL) ball.move$if_false1  -> ROM[1335] (0x0537)
+  (LABEL) ball.move$if_true3   -> ROM[1351] (0x0547)
+  (LABEL) ball.move$if_false3  -> ROM[1377] (0x0561)
+  (LABEL) ball.move$if_end3    -> ROM[1401] (0x0579)
+  (LABEL) ball.move$if_end1    -> ROM[1401] (0x0579)
+  (LABEL) ball.move$if_end0    -> ROM[1401] (0x0579)
+  (LABEL) ball.move$if_true4   -> ROM[1417] (0x0589)
+  (LABEL) ball.move$if_true5   -> ROM[1433] (0x0599)
+  (LABEL) ball.move$if_false5  -> ROM[1459] (0x05B3)
+  (LABEL) ball.move$if_end5    -> ROM[1483] (0x05CB)
+  (LABEL) ball.move$if_false4  -> ROM[1485] (0x05CD)
+  (LABEL) ball.move$if_true6   -> ROM[1501] (0x05DD)
+  (LABEL) ball.move$if_false6  -> ROM[1527] (0x05F7)
+  (LABEL) ball.move$if_end6    -> ROM[1551] (0x060F)
+  (LABEL) ball.move$if_end4    -> ROM[1551] (0x060F)
+  (LABEL) RET_ADDRESS_GT0      -> ROM[1571] (0x0623)
+  (LABEL) ball.move$if_true7   -> ROM[1581] (0x062D)
+  (LABEL) ball.move$if_false7  -> ROM[1612] (0x064C)
+  (LABEL) RET_ADDRESS_LT6      -> ROM[1632] (0x0660)
+  (LABEL) ball.move$if_true8   -> ROM[1642] (0x066A)
+  (LABEL) ball.move$if_false8  -> ROM[1675] (0x068B)
+  (LABEL) RET_ADDRESS_GT1      -> ROM[1695] (0x069F)
+  (LABEL) ball.move$if_true9   -> ROM[1705] (0x06A9)
+  (LABEL) ball.move$if_false9  -> ROM[1738] (0x06CA)
+  (LABEL) RET_ADDRESS_LT7      -> ROM[1758] (0x06DE)
+  (LABEL) ball.move$if_true10  -> ROM[1768] (0x06E8)
+  (LABEL) ball.move$if_false10 -> ROM[1801] (0x0709)
+  (LABEL) RET_ADDRESS_CALL15   -> ROM[1819] (0x071B)
+  (LABEL) ball.bounce          -> ROM[1835] (0x072B)
+  (LABEL) LOOP_ball.bounce     -> ROM[1837] (0x072D)
+  (LABEL) RET_ADDRESS_CALL16   -> ROM[1882] (0x075A)
+  (LABEL) RET_ADDRESS_CALL17   -> ROM[1916] (0x077C)
+  (LABEL) RET_ADDRESS_EQ0      -> ROM[1939] (0x0793)
+  (LABEL) ball.bounce$if_true0 -> ROM[1946] (0x079A)
+  (LABEL) ball.bounce$if_false0 -> ROM[1963] (0x07AB)
+  (LABEL) RET_ADDRESS_LT8      -> ROM[1979] (0x07BB)
+  (LABEL) RET_ADDRESS_EQ1      -> ROM[1997] (0x07CD)
+  (LABEL) RET_ADDRESS_LT9      -> ROM[2018] (0x07E2)
+  (LABEL) RET_ADDRESS_EQ2      -> ROM[2042] (0x07FA)
+  (LABEL) ball.bounce$if_true1 -> ROM[2054] (0x0806)
+  (LABEL) ball.bounce$if_false1 -> ROM[2071] (0x0817)
+  (LABEL) ball.bounce$if_end1  -> ROM[2086] (0x0826)
+  (LABEL) ball.bounce$if_end0  -> ROM[2086] (0x0826)
+  (LABEL) RET_ADDRESS_EQ3      -> ROM[2103] (0x0837)
+  (LABEL) ball.bounce$if_true2 -> ROM[2110] (0x083E)
+  (LABEL) RET_ADDRESS_CALL18   -> ROM[2153] (0x0869)
+  (LABEL) RET_ADDRESS_CALL19   -> ROM[2173] (0x087D)
+  (LABEL) RET_ADDRESS_CALL20   -> ROM[2214] (0x08A6)
+  (LABEL) ball.bounce$if_false2 -> ROM[2227] (0x08B3)
+  (LABEL) RET_ADDRESS_EQ4      -> ROM[2246] (0x08C6)
+  (LABEL) ball.bounce$if_true3 -> ROM[2253] (0x08CD)
+  (LABEL) RET_ADDRESS_CALL21   -> ROM[2290] (0x08F2)
+  (LABEL) RET_ADDRESS_CALL22   -> ROM[2310] (0x0906)
+  (LABEL) RET_ADDRESS_CALL23   -> ROM[2351] (0x092F)
+  (LABEL) ball.bounce$if_false3 -> ROM[2364] (0x093C)
+  (LABEL) RET_ADDRESS_EQ5      -> ROM[2383] (0x094F)
+  (LABEL) ball.bounce$if_true4 -> ROM[2390] (0x0956)
+  (LABEL) RET_ADDRESS_CALL24   -> ROM[2432] (0x0980)
+  (LABEL) RET_ADDRESS_CALL25   -> ROM[2453] (0x0995)
+  (LABEL) RET_ADDRESS_CALL26   -> ROM[2494] (0x09BE)
+  (LABEL) ball.bounce$if_false4 -> ROM[2507] (0x09CB)
+  (LABEL) RET_ADDRESS_CALL27   -> ROM[2543] (0x09EF)
+  (LABEL) RET_ADDRESS_CALL28   -> ROM[2564] (0x0A04)
+  (LABEL) RET_ADDRESS_CALL29   -> ROM[2605] (0x0A2D)
+  (LABEL) ball.bounce$if_end4  -> ROM[2616] (0x0A38)
+  (LABEL) ball.bounce$if_end3  -> ROM[2616] (0x0A38)
+  (LABEL) ball.bounce$if_end2  -> ROM[2616] (0x0A38)
+  (LABEL) RET_ADDRESS_CALL30   -> ROM[2648] (0x0A58)
+  (LABEL) bat.new              -> ROM[2659] (0x0A63)
+  (LABEL) RET_ADDRESS_CALL31   -> ROM[2677] (0x0A75)
+  (LABEL) RET_ADDRESS_CALL32   -> ROM[2773] (0x0AD5)
+  (LABEL) bat.dispose          -> ROM[2786] (0x0AE2)
+  (LABEL) RET_ADDRESS_CALL33   -> ROM[2816] (0x0B00)
+  (LABEL) bat.show             -> ROM[2827] (0x0B0B)
+  (LABEL) RET_ADDRESS_CALL34   -> ROM[2858] (0x0B2A)
+  (LABEL) RET_ADDRESS_CALL35   -> ROM[2881] (0x0B41)
+  (LABEL) bat.hide             -> ROM[2892] (0x0B4C)
+  (LABEL) RET_ADDRESS_CALL36   -> ROM[2920] (0x0B68)
+  (LABEL) RET_ADDRESS_CALL37   -> ROM[2943] (0x0B7F)
+  (LABEL) bat.draw             -> ROM[2954] (0x0B8A)
+  (LABEL) RET_ADDRESS_CALL38   -> ROM[3033] (0x0BD9)
+  (LABEL) bat.setdirection     -> ROM[3044] (0x0BE4)
+  (LABEL) bat.getleft          -> ROM[3078] (0x0C06)
+  (LABEL) bat.getright         -> ROM[3099] (0x0C1B)
+  (LABEL) bat.setwidth         -> ROM[3133] (0x0C3D)
+  (LABEL) RET_ADDRESS_CALL39   -> ROM[3163] (0x0C5B)
+  (LABEL) RET_ADDRESS_CALL40   -> ROM[3200] (0x0C80)
+  (LABEL) bat.move             -> ROM[3211] (0x0C8B)
+  (LABEL) RET_ADDRESS_EQ6      -> ROM[3240] (0x0CA8)
+  (LABEL) bat.move$if_true0    -> ROM[3247] (0x0CAF)
+  (LABEL) RET_ADDRESS_LT10     -> ROM[3286] (0x0CD6)
+  (LABEL) bat.move$if_true1    -> ROM[3293] (0x0CDD)
+  (LABEL) bat.move$if_false1   -> ROM[3303] (0x0CE7)
+  (LABEL) RET_ADDRESS_CALL41   -> ROM[3319] (0x0CF7)
+  (LABEL) RET_ADDRESS_CALL42   -> ROM[3424] (0x0D60)
+  (LABEL) RET_ADDRESS_CALL43   -> ROM[3448] (0x0D78)
+  (LABEL) RET_ADDRESS_CALL44   -> ROM[3518] (0x0DBE)
+  (LABEL) bat.move$if_false0   -> ROM[3525] (0x0DC5)
+  (LABEL) RET_ADDRESS_GT2      -> ROM[3579] (0x0DFB)
+  (LABEL) bat.move$if_true2    -> ROM[3586] (0x0E02)
+  (LABEL) bat.move$if_false2   -> ROM[3611] (0x0E1B)
+  (LABEL) RET_ADDRESS_CALL45   -> ROM[3627] (0x0E2B)
+  (LABEL) RET_ADDRESS_CALL46   -> ROM[3706] (0x0E7A)
+  (LABEL) RET_ADDRESS_CALL47   -> ROM[3730] (0x0E92)
+  (LABEL) RET_ADDRESS_CALL48   -> ROM[3826] (0x0EF2)
+  (LABEL) bat.move$if_end0     -> ROM[3831] (0x0EF7)
+  (LABEL) main.main            -> ROM[3837] (0x0EFD)
+  (LABEL) RET_ADDRESS_CALL49   -> ROM[3853] (0x0F0D)
+  (LABEL) RET_ADDRESS_CALL50   -> ROM[3870] (0x0F1E)
+  (LABEL) RET_ADDRESS_CALL51   -> ROM[3895] (0x0F37)
+  (LABEL) RET_ADDRESS_CALL52   -> ROM[3919] (0x0F4F)
+  (LABEL) ponggame.new         -> ROM[3930] (0x0F5A)
+  (LABEL) RET_ADDRESS_CALL53   -> ROM[3948] (0x0F6C)
+  (LABEL) RET_ADDRESS_CALL54   -> ROM[3965] (0x0F7D)
+  (LABEL) RET_ADDRESS_CALL55   -> ROM[4026] (0x0FBA)
+  (LABEL) RET_ADDRESS_CALL56   -> ROM[4076] (0x0FEC)
+  (LABEL) RET_ADDRESS_CALL57   -> ROM[4111] (0x100F)
+  (LABEL) RET_ADDRESS_CALL58   -> ROM[4150] (0x1036)
+  (LABEL) RET_ADDRESS_CALL59   -> ROM[4177] (0x1051)
+  (LABEL) RET_ADDRESS_CALL60   -> ROM[4200] (0x1068)
+  (LABEL) RET_ADDRESS_CALL61   -> ROM[4218] (0x107A)
+  (LABEL) RET_ADDRESS_CALL62   -> ROM[4236] (0x108C)
+  (LABEL) RET_ADDRESS_CALL63   -> ROM[4254] (0x109E)
+  (LABEL) RET_ADDRESS_CALL64   -> ROM[4272] (0x10B0)
+  (LABEL) RET_ADDRESS_CALL65   -> ROM[4290] (0x10C2)
+  (LABEL) RET_ADDRESS_CALL66   -> ROM[4308] (0x10D4)
+  (LABEL) RET_ADDRESS_CALL67   -> ROM[4326] (0x10E6)
+  (LABEL) RET_ADDRESS_CALL68   -> ROM[4344] (0x10F8)
+  (LABEL) RET_ADDRESS_CALL69   -> ROM[4356] (0x1104)
+  (LABEL) ponggame.dispose     -> ROM[4419] (0x1143)
+  (LABEL) RET_ADDRESS_CALL70   -> ROM[4450] (0x1162)
+  (LABEL) RET_ADDRESS_CALL71   -> ROM[4474] (0x117A)
+  (LABEL) RET_ADDRESS_CALL72   -> ROM[4497] (0x1191)
+  (LABEL) ponggame.newinstance -> ROM[4508] (0x119C)
+  (LABEL) RET_ADDRESS_CALL73   -> ROM[4520] (0x11A8)
+  (LABEL) ponggame.getinstance -> ROM[4531] (0x11B3)
+  (LABEL) ponggame.run         -> ROM[4539] (0x11BB)
+  (LABEL) ponggame.run$while_exp0 -> ROM[4555] (0x11CB)
+  (LABEL) ponggame.run$while_exp1 -> ROM[4575] (0x11DF)
+  (LABEL) RET_ADDRESS_EQ7      -> ROM[4590] (0x11EE)
+  (LABEL) RET_ADDRESS_CALL74   -> ROM[4627] (0x1213)
+  (LABEL) RET_ADDRESS_CALL75   -> ROM[4652] (0x122C)
+  (LABEL) RET_ADDRESS_CALL76   -> ROM[4675] (0x1243)
+  (LABEL) ponggame.run$while_end1 -> ROM[4682] (0x124A)
+  (LABEL) RET_ADDRESS_EQ8      -> ROM[4699] (0x125B)
+  (LABEL) ponggame.run$if_true0 -> ROM[4706] (0x1262)
+  (LABEL) RET_ADDRESS_CALL77   -> ROM[4729] (0x1279)
+  (LABEL) ponggame.run$if_false0 -> ROM[4736] (0x1280)
+  (LABEL) RET_ADDRESS_EQ9      -> ROM[4753] (0x1291)
+  (LABEL) ponggame.run$if_true1 -> ROM[4760] (0x1298)
+  (LABEL) RET_ADDRESS_CALL78   -> ROM[4785] (0x12B1)
+  (LABEL) ponggame.run$if_false1 -> ROM[4792] (0x12B8)
+  (LABEL) RET_ADDRESS_EQ10     -> ROM[4809] (0x12C9)
+  (LABEL) ponggame.run$if_true2 -> ROM[4816] (0x12D0)
+  (LABEL) ponggame.run$if_false2 -> ROM[4831] (0x12DF)
+  (LABEL) ponggame.run$if_end1 -> ROM[4831] (0x12DF)
+  (LABEL) ponggame.run$if_end0 -> ROM[4831] (0x12DF)
+  (LABEL) ponggame.run$while_exp2 -> ROM[4831] (0x12DF)
+  (LABEL) RET_ADDRESS_EQ11     -> ROM[4846] (0x12EE)
+  (LABEL) RET_ADDRESS_CALL79   -> ROM[4886] (0x1316)
+  (LABEL) RET_ADDRESS_CALL80   -> ROM[4911] (0x132F)
+  (LABEL) RET_ADDRESS_CALL81   -> ROM[4934] (0x1346)
+  (LABEL) ponggame.run$while_end2 -> ROM[4941] (0x134D)
+  (LABEL) ponggame.run$while_end0 -> ROM[4943] (0x134F)
+  (LABEL) ponggame.run$if_true3 -> ROM[4959] (0x135F)
+  (LABEL) RET_ADDRESS_CALL82   -> ROM[4983] (0x1377)
+  (LABEL) RET_ADDRESS_CALL83   -> ROM[5006] (0x138E)
+  (LABEL) RET_ADDRESS_CALL84   -> ROM[5024] (0x13A0)
+  (LABEL) RET_ADDRESS_CALL85   -> ROM[5042] (0x13B2)
+  (LABEL) RET_ADDRESS_CALL86   -> ROM[5060] (0x13C4)
+  (LABEL) RET_ADDRESS_CALL87   -> ROM[5078] (0x13D6)
+  (LABEL) RET_ADDRESS_CALL88   -> ROM[5096] (0x13E8)
+  (LABEL) RET_ADDRESS_CALL89   -> ROM[5114] (0x13FA)
+  (LABEL) RET_ADDRESS_CALL90   -> ROM[5132] (0x140C)
+  (LABEL) RET_ADDRESS_CALL91   -> ROM[5150] (0x141E)
+  (LABEL) RET_ADDRESS_CALL92   -> ROM[5168] (0x1430)
+  (LABEL) RET_ADDRESS_CALL93   -> ROM[5180] (0x143C)
+  (LABEL) ponggame.run$if_false3 -> ROM[5185] (0x1441)
+  (LABEL) ponggame.moveball    -> ROM[5191] (0x1447)
+  (LABEL) LOOP_ponggame.moveball -> ROM[5193] (0x1449)
+  (LABEL) RET_ADDRESS_CALL94   -> ROM[5231] (0x146F)
+  (LABEL) RET_ADDRESS_GT3      -> ROM[5254] (0x1486)
+  (LABEL) RET_ADDRESS_EQ12     -> ROM[5275] (0x149B)
+  (LABEL) ponggame.moveball$if_true0 -> ROM[5290] (0x14AA)
+  (LABEL) RET_ADDRESS_CALL95   -> ROM[5337] (0x14D9)
+  (LABEL) RET_ADDRESS_CALL96   -> ROM[5362] (0x14F2)
+  (LABEL) RET_ADDRESS_CALL97   -> ROM[5388] (0x150C)
+  (LABEL) RET_ADDRESS_CALL98   -> ROM[5415] (0x1527)
+  (LABEL) RET_ADDRESS_EQ13     -> ROM[5442] (0x1542)
+  (LABEL) ponggame.moveball$if_true1 -> ROM[5449] (0x1549)
+  (LABEL) RET_ADDRESS_GT4      -> ROM[5469] (0x155D)
+  (LABEL) RET_ADDRESS_LT11     -> ROM[5490] (0x1572)
+  (LABEL) ponggame.moveball$if_true2 -> ROM[5522] (0x1592)
+  (LABEL) RET_ADDRESS_LT12     -> ROM[5553] (0x15B1)
+  (LABEL) ponggame.moveball$if_true3 -> ROM[5560] (0x15B8)
+  (LABEL) ponggame.moveball$if_false3 -> ROM[5576] (0x15C8)
+  (LABEL) RET_ADDRESS_GT5      -> ROM[5608] (0x15E8)
+  (LABEL) ponggame.moveball$if_true4 -> ROM[5615] (0x15EF)
+  (LABEL) ponggame.moveball$if_false4 -> ROM[5625] (0x15F9)
+  (LABEL) ponggame.moveball$if_end3 -> ROM[5625] (0x15F9)
+  (LABEL) RET_ADDRESS_CALL99   -> ROM[5684] (0x1634)
+  (LABEL) RET_ADDRESS_CALL100  -> ROM[5740] (0x166C)
+  (LABEL) RET_ADDRESS_CALL101  -> ROM[5766] (0x1686)
+  (LABEL) ponggame.moveball$if_false2 -> ROM[5771] (0x168B)
+  (LABEL) ponggame.moveball$if_false1 -> ROM[5771] (0x168B)
+  (LABEL) RET_ADDRESS_CALL102  -> ROM[5797] (0x16A5)
+  (LABEL) ponggame.moveball$if_false0 -> ROM[5802] (0x16AA)
+  (LABEL) array.new            -> ROM[5808] (0x16B0)
+  (LABEL) RET_ADDRESS_GT6      -> ROM[5823] (0x16BF)
+  (LABEL) array.new$if_true0   -> ROM[5833] (0x16C9)
+  (LABEL) RET_ADDRESS_CALL103  -> ROM[5851] (0x16DB)
+  (LABEL) array.new$if_false0  -> ROM[5856] (0x16E0)
+  (LABEL) RET_ADDRESS_CALL104  -> ROM[5875] (0x16F3)
+  (LABEL) array.dispose        -> ROM[5877] (0x16F5)
+  (LABEL) RET_ADDRESS_CALL105  -> ROM[5907] (0x1713)
+  (LABEL) keyboard.init        -> ROM[5918] (0x171E)
+  (LABEL) keyboard.keypressed  -> ROM[5924] (0x1724)
+  (LABEL) RET_ADDRESS_CALL106  -> ROM[5942] (0x1736)
+  (LABEL) keyboard.readchar    -> ROM[5944] (0x1738)
+  (LABEL) RET_ADDRESS_CALL107  -> ROM[5967] (0x174F)
+  (LABEL) keyboard.readchar$while_exp0 -> ROM[5972] (0x1754)
+  (LABEL) RET_ADDRESS_EQ14     -> ROM[5987] (0x1763)
+  (LABEL) RET_ADDRESS_GT7      -> ROM[6002] (0x1772)
+  (LABEL) RET_ADDRESS_CALL108  -> ROM[6027] (0x178B)
+  (LABEL) RET_ADDRESS_GT8      -> ROM[6048] (0x17A0)
+  (LABEL) keyboard.readchar$if_true0 -> ROM[6055] (0x17A7)
+  (LABEL) keyboard.readchar$if_false0 -> ROM[6068] (0x17B4)
+  (LABEL) keyboard.readchar$while_end0 -> ROM[6070] (0x17B6)
+  (LABEL) RET_ADDRESS_CALL109  -> ROM[6082] (0x17C2)
+  (LABEL) RET_ADDRESS_CALL110  -> ROM[6094] (0x17CE)
+  (LABEL) RET_ADDRESS_CALL111  -> ROM[6118] (0x17E6)
+  (LABEL) keyboard.readline    -> ROM[6132] (0x17F4)
+  (LABEL) LOOP_keyboard.readline -> ROM[6134] (0x17F6)
+  (LABEL) RET_ADDRESS_CALL112  -> ROM[6159] (0x180F)
+  (LABEL) RET_ADDRESS_CALL113  -> ROM[6186] (0x182A)
+  (LABEL) RET_ADDRESS_CALL114  -> ROM[6203] (0x183B)
+  (LABEL) RET_ADDRESS_CALL115  -> ROM[6221] (0x184D)
+  (LABEL) keyboard.readline$while_exp0 -> ROM[6228] (0x1854)
+  (LABEL) RET_ADDRESS_CALL116  -> ROM[6260] (0x1874)
+  (LABEL) RET_ADDRESS_EQ15     -> ROM[6284] (0x188C)
+  (LABEL) keyboard.readline$if_true0 -> ROM[6312] (0x18A8)
+  (LABEL) RET_ADDRESS_EQ16     -> ROM[6331] (0x18BB)
+  (LABEL) keyboard.readline$if_true1 -> ROM[6338] (0x18C2)
+  (LABEL) RET_ADDRESS_CALL117  -> ROM[6359] (0x18D7)
+  (LABEL) keyboard.readline$if_false1 -> ROM[6366] (0x18DE)
+  (LABEL) RET_ADDRESS_CALL118  -> ROM[6394] (0x18FA)
+  (LABEL) keyboard.readline$if_end1 -> ROM[6402] (0x1902)
+  (LABEL) keyboard.readline$if_false0 -> ROM[6402] (0x1902)
+  (LABEL) keyboard.readline$while_end0 -> ROM[6404] (0x1904)
+  (LABEL) keyboard.readint     -> ROM[6415] (0x190F)
+  (LABEL) RET_ADDRESS_CALL119  -> ROM[6441] (0x1929)
+  (LABEL) RET_ADDRESS_CALL120  -> ROM[6466] (0x1942)
+  (LABEL) RET_ADDRESS_CALL121  -> ROM[6491] (0x195B)
+  (LABEL) math.init            -> ROM[6505] (0x1969)
+  (LABEL) RET_ADDRESS_CALL122  -> ROM[6527] (0x197F)
+  (LABEL) RET_ADDRESS_CALL123  -> ROM[6550] (0x1996)
+  (LABEL) math.init$while_exp0 -> ROM[6596] (0x19C4)
+  (LABEL) RET_ADDRESS_LT13     -> ROM[6613] (0x19D5)
+  (LABEL) math.init$while_end0 -> ROM[6768] (0x1A70)
+  (LABEL) math.abs             -> ROM[6774] (0x1A76)
+  (LABEL) RET_ADDRESS_LT14     -> ROM[6789] (0x1A85)
+  (LABEL) math.abs$if_true0    -> ROM[6796] (0x1A8C)
+  (LABEL) math.abs$if_false0   -> ROM[6813] (0x1A9D)
+  (LABEL) math.multiply        -> ROM[6822] (0x1AA6)
+  (LABEL) LOOP_math.multiply   -> ROM[6824] (0x1AA8)
+  (LABEL) RET_ADDRESS_LT15     -> ROM[6846] (0x1ABE)
+  (LABEL) RET_ADDRESS_GT9      -> ROM[6861] (0x1ACD)
+  (LABEL) RET_ADDRESS_GT10     -> ROM[6881] (0x1AE1)
+  (LABEL) RET_ADDRESS_LT16     -> ROM[6896] (0x1AF0)
+  (LABEL) RET_ADDRESS_CALL124  -> ROM[6934] (0x1B16)
+  (LABEL) RET_ADDRESS_CALL125  -> ROM[6959] (0x1B2F)
+  (LABEL) RET_ADDRESS_LT17     -> ROM[6983] (0x1B47)
+  (LABEL) math.multiply$if_true0 -> ROM[6990] (0x1B4E)
+  (LABEL) math.multiply$if_false0 -> ROM[7029] (0x1B75)
+  (LABEL) math.multiply$while_exp0 -> ROM[7029] (0x1B75)
+  (LABEL) RET_ADDRESS_LT18     -> ROM[7048] (0x1B88)
+  (LABEL) RET_ADDRESS_GT11     -> ROM[7108] (0x1BC4)
+  (LABEL) math.multiply$if_true1 -> ROM[7115] (0x1BCB)
+  (LABEL) math.multiply$if_false1 -> ROM[7192] (0x1C18)
+  (LABEL) math.multiply$while_end0 -> ROM[7245] (0x1C4D)
+  (LABEL) math.multiply$if_true2 -> ROM[7261] (0x1C5D)
+  (LABEL) math.multiply$if_false2 -> ROM[7278] (0x1C6E)
+  (LABEL) math.divide          -> ROM[7287] (0x1C77)
+  (LABEL) LOOP_math.divide     -> ROM[7289] (0x1C79)
+  (LABEL) RET_ADDRESS_EQ17     -> ROM[7311] (0x1C8F)
+  (LABEL) math.divide$if_true0 -> ROM[7318] (0x1C96)
+  (LABEL) RET_ADDRESS_CALL126  -> ROM[7336] (0x1CA8)
+  (LABEL) math.divide$if_false0 -> ROM[7341] (0x1CAD)
+  (LABEL) RET_ADDRESS_LT19     -> ROM[7356] (0x1CBC)
+  (LABEL) RET_ADDRESS_GT12     -> ROM[7371] (0x1CCB)
+  (LABEL) RET_ADDRESS_GT13     -> ROM[7391] (0x1CDF)
+  (LABEL) RET_ADDRESS_LT20     -> ROM[7406] (0x1CEE)
+  (LABEL) RET_ADDRESS_CALL127  -> ROM[7457] (0x1D21)
+  (LABEL) RET_ADDRESS_CALL128  -> ROM[7498] (0x1D4A)
+  (LABEL) math.divide$while_exp0 -> ROM[7504] (0x1D50)
+  (LABEL) RET_ADDRESS_LT21     -> ROM[7599] (0x1DAF)
+  (LABEL) math.divide$if_true1 -> ROM[7626] (0x1DCA)
+  (LABEL) RET_ADDRESS_GT14     -> ROM[7790] (0x1E6E)
+  (LABEL) math.divide$if_true2 -> ROM[7817] (0x1E89)
+  (LABEL) math.divide$if_false2 -> ROM[7839] (0x1E9F)
+  (LABEL) math.divide$if_false1 -> ROM[7839] (0x1E9F)
+  (LABEL) math.divide$while_end0 -> ROM[7841] (0x1EA1)
+  (LABEL) math.divide$while_exp1 -> ROM[7841] (0x1EA1)
+  (LABEL) RET_ADDRESS_GT15     -> ROM[7860] (0x1EB4)
+  (LABEL) RET_ADDRESS_GT16     -> ROM[7909] (0x1EE5)
+  (LABEL) math.divide$if_true3 -> ROM[7919] (0x1EEF)
+  (LABEL) math.divide$if_false3 -> ROM[8015] (0x1F4F)
+  (LABEL) math.divide$while_end1 -> ROM[8039] (0x1F67)
+  (LABEL) math.divide$if_true4 -> ROM[8054] (0x1F76)
+  (LABEL) math.divide$if_false4 -> ROM[8071] (0x1F87)
+  (LABEL) math.sqrt            -> ROM[8080] (0x1F90)
+  (LABEL) LOOP_math.sqrt       -> ROM[8082] (0x1F92)
+  (LABEL) RET_ADDRESS_LT22     -> ROM[8104] (0x1FA8)
+  (LABEL) math.sqrt$if_true0   -> ROM[8111] (0x1FAF)
+  (LABEL) RET_ADDRESS_CALL129  -> ROM[8129] (0x1FC1)
+  (LABEL) math.sqrt$if_false0  -> ROM[8134] (0x1FC6)
+  (LABEL) math.sqrt$while_exp0 -> ROM[8146] (0x1FD2)
+  (LABEL) RET_ADDRESS_GT17     -> ROM[8165] (0x1FE5)
+  (LABEL) RET_ADDRESS_CALL130  -> ROM[8249] (0x2039)
+  (LABEL) RET_ADDRESS_GT18     -> ROM[8275] (0x2053)
+  (LABEL) RET_ADDRESS_LT23     -> ROM[8294] (0x2066)
+  (LABEL) math.sqrt$if_true1   -> ROM[8309] (0x2075)
+  (LABEL) math.sqrt$if_false1  -> ROM[8324] (0x2084)
+  (LABEL) math.sqrt$while_end0 -> ROM[8348] (0x209C)
+  (LABEL) math.max             -> ROM[8359] (0x20A7)
+  (LABEL) RET_ADDRESS_GT19     -> ROM[8377] (0x20B9)
+  (LABEL) math.max$if_true0    -> ROM[8384] (0x20C0)
+  (LABEL) math.max$if_false0   -> ROM[8397] (0x20CD)
+  (LABEL) math.min             -> ROM[8406] (0x20D6)
+  (LABEL) RET_ADDRESS_LT24     -> ROM[8424] (0x20E8)
+  (LABEL) math.min$if_true0    -> ROM[8431] (0x20EF)
+  (LABEL) math.min$if_false0   -> ROM[8444] (0x20FC)
+  (LABEL) memory.init          -> ROM[8453] (0x2105)
+  (LABEL) memory.peek          -> ROM[8558] (0x216E)
+  (LABEL) memory.poke          -> ROM[8590] (0x218E)
+  (LABEL) memory.alloc         -> ROM[8643] (0x21C3)
+  (LABEL) RET_ADDRESS_LT25     -> ROM[8662] (0x21D6)
+  (LABEL) memory.alloc$if_true0 -> ROM[8669] (0x21DD)
+  (LABEL) RET_ADDRESS_CALL131  -> ROM[8687] (0x21EF)
+  (LABEL) memory.alloc$if_false0 -> ROM[8692] (0x21F4)
+  (LABEL) memory.alloc$while_exp0 -> ROM[8704] (0x2200)
+  (LABEL) RET_ADDRESS_LT26     -> ROM[8743] (0x2227)
+  (LABEL) memory.alloc$while_end0 -> ROM[8787] (0x2253)
+  (LABEL) RET_ADDRESS_GT20     -> ROM[8816] (0x2270)
+  (LABEL) memory.alloc$if_true1 -> ROM[8823] (0x2277)
+  (LABEL) RET_ADDRESS_CALL132  -> ROM[8841] (0x2289)
+  (LABEL) memory.alloc$if_false1 -> ROM[8846] (0x228E)
+  (LABEL) RET_ADDRESS_GT21     -> ROM[8896] (0x22C0)
+  (LABEL) memory.alloc$if_true2 -> ROM[8903] (0x22C7)
+  (LABEL) RET_ADDRESS_EQ18     -> ROM[9056] (0x2360)
+  (LABEL) memory.alloc$if_true3 -> ROM[9063] (0x2367)
+  (LABEL) memory.alloc$if_false3 -> ROM[9147] (0x23BB)
+  (LABEL) memory.alloc$if_end3 -> ROM[9227] (0x240B)
+  (LABEL) memory.alloc$if_false2 -> ROM[9295] (0x244F)
+  (LABEL) memory.dealloc       -> ROM[9357] (0x248D)
+  (LABEL) RET_ADDRESS_EQ19     -> ROM[9458] (0x24F2)
+  (LABEL) memory.dealloc$if_true0 -> ROM[9465] (0x24F9)
+  (LABEL) memory.dealloc$if_false0 -> ROM[9556] (0x2554)
+  (LABEL) RET_ADDRESS_EQ20     -> ROM[9717] (0x25F5)
+  (LABEL) memory.dealloc$if_true1 -> ROM[9724] (0x25FC)
+  (LABEL) memory.dealloc$if_false1 -> ROM[9782] (0x2636)
+  (LABEL) memory.dealloc$if_end1 -> ROM[9848] (0x2678)
+  (LABEL) memory.dealloc$if_end0 -> ROM[9848] (0x2678)
+  (LABEL) output.init          -> ROM[9854] (0x267E)
+  (LABEL) RET_ADDRESS_CALL133  -> ROM[9915] (0x26BB)
+  (LABEL) RET_ADDRESS_CALL134  -> ROM[9932] (0x26CC)
+  (LABEL) RET_ADDRESS_CALL135  -> ROM[9949] (0x26DD)
+  (LABEL) output.initmap       -> ROM[9960] (0x26E8)
+  (LABEL) RET_ADDRESS_CALL136  -> ROM[9978] (0x26FA)
+  (LABEL) RET_ADDRESS_CALL137  -> ROM[10061] (0x274D)
+  (LABEL) RET_ADDRESS_CALL138  -> ROM[10128] (0x2790)
+  (LABEL) RET_ADDRESS_CALL139  -> ROM[10211] (0x27E3)
+  (LABEL) RET_ADDRESS_CALL140  -> ROM[10284] (0x282C)
+  (LABEL) RET_ADDRESS_CALL141  -> ROM[10367] (0x287F)
+  (LABEL) RET_ADDRESS_CALL142  -> ROM[10454] (0x28D6)
+  (LABEL) RET_ADDRESS_CALL143  -> ROM[10535] (0x2927)
+  (LABEL) RET_ADDRESS_CALL144  -> ROM[10620] (0x297C)
+  (LABEL) RET_ADDRESS_CALL145  -> ROM[10693] (0x29C5)
+  (LABEL) RET_ADDRESS_CALL146  -> ROM[10778] (0x2A1A)
+  (LABEL) RET_ADDRESS_CALL147  -> ROM[10863] (0x2A6F)
+  (LABEL) RET_ADDRESS_CALL148  -> ROM[10940] (0x2ABC)
+  (LABEL) RET_ADDRESS_CALL149  -> ROM[11017] (0x2B09)
+  (LABEL) RET_ADDRESS_CALL150  -> ROM[11090] (0x2B52)
+  (LABEL) RET_ADDRESS_CALL151  -> ROM[11159] (0x2B97)
+  (LABEL) RET_ADDRESS_CALL152  -> ROM[11230] (0x2BDE)
+  (LABEL) RET_ADDRESS_CALL153  -> ROM[11309] (0x2C2D)
+  (LABEL) RET_ADDRESS_CALL154  -> ROM[11394] (0x2C82)
+  (LABEL) RET_ADDRESS_CALL155  -> ROM[11479] (0x2CD7)
+  (LABEL) RET_ADDRESS_CALL156  -> ROM[11564] (0x2D2C)
+  (LABEL) RET_ADDRESS_CALL157  -> ROM[11649] (0x2D81)
+  (LABEL) RET_ADDRESS_CALL158  -> ROM[11734] (0x2DD6)
+  (LABEL) RET_ADDRESS_CALL159  -> ROM[11819] (0x2E2B)
+  (LABEL) RET_ADDRESS_CALL160  -> ROM[11904] (0x2E80)
+  (LABEL) RET_ADDRESS_CALL161  -> ROM[11989] (0x2ED5)
+  (LABEL) RET_ADDRESS_CALL162  -> ROM[12074] (0x2F2A)
+  (LABEL) RET_ADDRESS_CALL163  -> ROM[12159] (0x2F7F)
+  (LABEL) RET_ADDRESS_CALL164  -> ROM[12234] (0x2FCA)
+  (LABEL) RET_ADDRESS_CALL165  -> ROM[12311] (0x3017)
+  (LABEL) RET_ADDRESS_CALL166  -> ROM[12392] (0x3068)
+  (LABEL) RET_ADDRESS_CALL167  -> ROM[12463] (0x30AF)
+  (LABEL) RET_ADDRESS_CALL168  -> ROM[12544] (0x3100)
+  (LABEL) RET_ADDRESS_CALL169  -> ROM[12629] (0x3155)
+  (LABEL) RET_ADDRESS_CALL170  -> ROM[12712] (0x31A8)
+  (LABEL) RET_ADDRESS_CALL171  -> ROM[12797] (0x31FD)
+  (LABEL) RET_ADDRESS_CALL172  -> ROM[12882] (0x3252)
+  (LABEL) RET_ADDRESS_CALL173  -> ROM[12967] (0x32A7)
+  (LABEL) RET_ADDRESS_CALL174  -> ROM[13052] (0x32FC)
+  (LABEL) RET_ADDRESS_CALL175  -> ROM[13137] (0x3351)
+  (LABEL) RET_ADDRESS_CALL176  -> ROM[13222] (0x33A6)
+  (LABEL) RET_ADDRESS_CALL177  -> ROM[13307] (0x33FB)
+  (LABEL) RET_ADDRESS_CALL178  -> ROM[13392] (0x3450)
+  (LABEL) RET_ADDRESS_CALL179  -> ROM[13477] (0x34A5)
+  (LABEL) RET_ADDRESS_CALL180  -> ROM[13562] (0x34FA)
+  (LABEL) RET_ADDRESS_CALL181  -> ROM[13647] (0x354F)
+  (LABEL) RET_ADDRESS_CALL182  -> ROM[13732] (0x35A4)
+  (LABEL) RET_ADDRESS_CALL183  -> ROM[13817] (0x35F9)
+  (LABEL) RET_ADDRESS_CALL184  -> ROM[13902] (0x364E)
+  (LABEL) RET_ADDRESS_CALL185  -> ROM[13987] (0x36A3)
+  (LABEL) RET_ADDRESS_CALL186  -> ROM[14072] (0x36F8)
+  (LABEL) RET_ADDRESS_CALL187  -> ROM[14159] (0x374F)
+  (LABEL) RET_ADDRESS_CALL188  -> ROM[14244] (0x37A4)
+  (LABEL) RET_ADDRESS_CALL189  -> ROM[14329] (0x37F9)
+  (LABEL) RET_ADDRESS_CALL190  -> ROM[14414] (0x384E)
+  (LABEL) RET_ADDRESS_CALL191  -> ROM[14499] (0x38A3)
+  (LABEL) RET_ADDRESS_CALL192  -> ROM[14584] (0x38F8)
+  (LABEL) RET_ADDRESS_CALL193  -> ROM[14669] (0x394D)
+  (LABEL) RET_ADDRESS_CALL194  -> ROM[14754] (0x39A2)
+  (LABEL) RET_ADDRESS_CALL195  -> ROM[14839] (0x39F7)
+  (LABEL) RET_ADDRESS_CALL196  -> ROM[14924] (0x3A4C)
+  (LABEL) RET_ADDRESS_CALL197  -> ROM[15009] (0x3AA1)
+  (LABEL) RET_ADDRESS_CALL198  -> ROM[15088] (0x3AF0)
+  (LABEL) RET_ADDRESS_CALL199  -> ROM[15173] (0x3B45)
+  (LABEL) RET_ADDRESS_CALL200  -> ROM[15246] (0x3B8E)
+  (LABEL) RET_ADDRESS_CALL201  -> ROM[15315] (0x3BD3)
+  (LABEL) RET_ADDRESS_CALL202  -> ROM[15388] (0x3C1C)
+  (LABEL) RET_ADDRESS_CALL203  -> ROM[15467] (0x3C6B)
+  (LABEL) RET_ADDRESS_CALL204  -> ROM[15552] (0x3CC0)
+  (LABEL) RET_ADDRESS_CALL205  -> ROM[15631] (0x3D0F)
+  (LABEL) RET_ADDRESS_CALL206  -> ROM[15716] (0x3D64)
+  (LABEL) RET_ADDRESS_CALL207  -> ROM[15795] (0x3DB3)
+  (LABEL) RET_ADDRESS_CALL208  -> ROM[15880] (0x3E08)
+  (LABEL) RET_ADDRESS_CALL209  -> ROM[15963] (0x3E5B)
+  (LABEL) RET_ADDRESS_CALL210  -> ROM[16048] (0x3EB0)
+  (LABEL) RET_ADDRESS_CALL211  -> ROM[16131] (0x3F03)
+  (LABEL) RET_ADDRESS_CALL212  -> ROM[16216] (0x3F58)
+  (LABEL) RET_ADDRESS_CALL213  -> ROM[16301] (0x3FAD)
+  (LABEL) RET_ADDRESS_CALL214  -> ROM[16386] (0x4002)
+  (LABEL) RET_ADDRESS_CALL215  -> ROM[16465] (0x4051)
+  (LABEL) RET_ADDRESS_CALL216  -> ROM[16544] (0x40A0)
+  (LABEL) RET_ADDRESS_CALL217  -> ROM[16623] (0x40EF)
+  (LABEL) RET_ADDRESS_CALL218  -> ROM[16704] (0x4140)
+  (LABEL) RET_ADDRESS_CALL219  -> ROM[16785] (0x4191)
+  (LABEL) RET_ADDRESS_CALL220  -> ROM[16864] (0x41E0)
+  (LABEL) RET_ADDRESS_CALL221  -> ROM[16943] (0x422F)
+  (LABEL) RET_ADDRESS_CALL222  -> ROM[17028] (0x4284)
+  (LABEL) RET_ADDRESS_CALL223  -> ROM[17107] (0x42D3)
+  (LABEL) RET_ADDRESS_CALL224  -> ROM[17186] (0x4322)
+  (LABEL) RET_ADDRESS_CALL225  -> ROM[17265] (0x4371)
+  (LABEL) RET_ADDRESS_CALL226  -> ROM[17344] (0x43C0)
+  (LABEL) RET_ADDRESS_CALL227  -> ROM[17425] (0x4411)
+  (LABEL) RET_ADDRESS_CALL228  -> ROM[17504] (0x4460)
+  (LABEL) RET_ADDRESS_CALL229  -> ROM[17589] (0x44B5)
+  (LABEL) RET_ADDRESS_CALL230  -> ROM[17674] (0x450A)
+  (LABEL) RET_ADDRESS_CALL231  -> ROM[17759] (0x455F)
+  (LABEL) RET_ADDRESS_CALL232  -> ROM[17832] (0x45A8)
+  (LABEL) output.create        -> ROM[17843] (0x45B3)
+  (LABEL) RET_ADDRESS_CALL233  -> ROM[17865] (0x45C9)
+  (LABEL) output.createshiftedmap -> ROM[18456] (0x4818)
+  (LABEL) LOOP_output.createshiftedmap -> ROM[18458] (0x481A)
+  (LABEL) RET_ADDRESS_CALL234  -> ROM[18483] (0x4833)
+  (LABEL) output.createshiftedmap$while_exp0 -> ROM[18499] (0x4843)
+  (LABEL) RET_ADDRESS_LT27     -> ROM[18517] (0x4855)
+  (LABEL) RET_ADDRESS_CALL235  -> ROM[18580] (0x4894)
+  (LABEL) output.createshiftedmap$while_exp1 -> ROM[18646] (0x48D6)
+  (LABEL) RET_ADDRESS_LT28     -> ROM[18665] (0x48E9)
+  (LABEL) RET_ADDRESS_CALL236  -> ROM[18745] (0x4939)
+  (LABEL) output.createshiftedmap$while_end1 -> ROM[18795] (0x496B)
+  (LABEL) RET_ADDRESS_EQ21     -> ROM[18811] (0x497B)
+  (LABEL) output.createshiftedmap$if_true0 -> ROM[18818] (0x4982)
+  (LABEL) output.createshiftedmap$if_false0 -> ROM[18833] (0x4991)
+  (LABEL) output.createshiftedmap$if_end0 -> ROM[18857] (0x49A9)
+  (LABEL) output.createshiftedmap$while_end0 -> ROM[18859] (0x49AB)
+  (LABEL) output.getmap        -> ROM[18865] (0x49B1)
+  (LABEL) RET_ADDRESS_LT29     -> ROM[18886] (0x49C6)
+  (LABEL) RET_ADDRESS_GT22     -> ROM[18903] (0x49D7)
+  (LABEL) output.getmap$if_true0 -> ROM[18915] (0x49E3)
+  (LABEL) output.getmap$if_false0 -> ROM[18925] (0x49ED)
+  (LABEL) output.getmap$if_true1 -> ROM[18938] (0x49FA)
+  (LABEL) output.getmap$if_false1 -> ROM[18976] (0x4A20)
+  (LABEL) output.getmap$if_end1 -> ROM[19012] (0x4A44)
+  (LABEL) output.drawchar      -> ROM[19021] (0x4A4D)
+  (LABEL) LOOP_output.drawchar -> ROM[19023] (0x4A4F)
+  (LABEL) RET_ADDRESS_CALL237  -> ROM[19049] (0x4A69)
+  (LABEL) output.drawchar$while_exp0 -> ROM[19068] (0x4A7C)
+  (LABEL) RET_ADDRESS_LT30     -> ROM[19085] (0x4A8D)
+  (LABEL) output.drawchar$if_true0 -> ROM[19106] (0x4AA2)
+  (LABEL) output.drawchar$if_false0 -> ROM[19161] (0x4AD9)
+  (LABEL) output.drawchar$if_end0 -> ROM[19210] (0x4B0A)
+  (LABEL) output.drawchar$while_end0 -> ROM[19344] (0x4B90)
+  (LABEL) output.movecursor    -> ROM[19350] (0x4B96)
+  (LABEL) RET_ADDRESS_LT31     -> ROM[19365] (0x4BA5)
+  (LABEL) RET_ADDRESS_GT23     -> ROM[19382] (0x4BB6)
+  (LABEL) RET_ADDRESS_LT32     -> ROM[19402] (0x4BCA)
+  (LABEL) RET_ADDRESS_GT24     -> ROM[19424] (0x4BE0)
+  (LABEL) output.movecursor$if_true0 -> ROM[19436] (0x4BEC)
+  (LABEL) RET_ADDRESS_CALL238  -> ROM[19454] (0x4BFE)
+  (LABEL) output.movecursor$if_false0 -> ROM[19459] (0x4C03)
+  (LABEL) RET_ADDRESS_CALL239  -> ROM[19484] (0x4C1C)
+  (LABEL) RET_ADDRESS_CALL240  -> ROM[19520] (0x4C40)
+  (LABEL) RET_ADDRESS_CALL241  -> ROM[19572] (0x4C74)
+  (LABEL) RET_ADDRESS_EQ22     -> ROM[19576] (0x4C78)
+  (LABEL) RET_ADDRESS_CALL242  -> ROM[19599] (0x4C8F)
+  (LABEL) output.printchar     -> ROM[19610] (0x4C9A)
+  (LABEL) RET_ADDRESS_CALL243  -> ROM[19629] (0x4CAD)
+  (LABEL) RET_ADDRESS_EQ23     -> ROM[19633] (0x4CB1)
+  (LABEL) output.printchar$if_true0 -> ROM[19640] (0x4CB8)
+  (LABEL) RET_ADDRESS_CALL244  -> ROM[19652] (0x4CC4)
+  (LABEL) output.printchar$if_false0 -> ROM[19659] (0x4CCB)
+  (LABEL) RET_ADDRESS_CALL245  -> ROM[19678] (0x4CDE)
+  (LABEL) RET_ADDRESS_EQ24     -> ROM[19682] (0x4CE2)
+  (LABEL) output.printchar$if_true1 -> ROM[19689] (0x4CE9)
+  (LABEL) RET_ADDRESS_CALL246  -> ROM[19701] (0x4CF5)
+  (LABEL) output.printchar$if_false1 -> ROM[19708] (0x4CFC)
+  (LABEL) RET_ADDRESS_CALL247  -> ROM[19727] (0x4D0F)
+  (LABEL) output.printchar$if_true2 -> ROM[19748] (0x4D24)
+  (LABEL) output.printchar$if_false2 -> ROM[19788] (0x4D4C)
+  (LABEL) RET_ADDRESS_EQ25     -> ROM[19804] (0x4D5C)
+  (LABEL) output.printchar$if_true3 -> ROM[19811] (0x4D63)
+  (LABEL) RET_ADDRESS_CALL248  -> ROM[19823] (0x4D6F)
+  (LABEL) output.printchar$if_false3 -> ROM[19830] (0x4D76)
+  (LABEL) output.printchar$if_end3 -> ROM[19844] (0x4D84)
+  (LABEL) output.printchar$if_end1 -> ROM[19844] (0x4D84)
+  (LABEL) output.printchar$if_end0 -> ROM[19844] (0x4D84)
+  (LABEL) output.printstring   -> ROM[19850] (0x4D8A)
+  (LABEL) RET_ADDRESS_CALL249  -> ROM[19876] (0x4DA4)
+  (LABEL) output.printstring$while_exp0 -> ROM[19882] (0x4DAA)
+  (LABEL) RET_ADDRESS_LT33     -> ROM[19900] (0x4DBC)
+  (LABEL) RET_ADDRESS_CALL250  -> ROM[19934] (0x4DDE)
+  (LABEL) RET_ADDRESS_CALL251  -> ROM[19946] (0x4DEA)
+  (LABEL) output.printstring$while_end0 -> ROM[19975] (0x4E07)
+  (LABEL) output.printint      -> ROM[19981] (0x4E0D)
+  (LABEL) RET_ADDRESS_CALL252  -> ROM[20006] (0x4E26)
+  (LABEL) RET_ADDRESS_CALL253  -> ROM[20029] (0x4E3D)
+  (LABEL) output.println       -> ROM[20040] (0x4E48)
+  (LABEL) RET_ADDRESS_EQ26     -> ROM[20110] (0x4E8E)
+  (LABEL) output.println$if_true0 -> ROM[20117] (0x4E95)
+  (LABEL) output.println$if_false0 -> ROM[20128] (0x4EA0)
+  (LABEL) output.backspace     -> ROM[20134] (0x4EA6)
+  (LABEL) output.backspace$if_true0 -> ROM[20147] (0x4EB3)
+  (LABEL) RET_ADDRESS_GT25     -> ROM[20161] (0x4EC1)
+  (LABEL) output.backspace$if_true1 -> ROM[20168] (0x4EC8)
+  (LABEL) output.backspace$if_false1 -> ROM[20210] (0x4EF2)
+  (LABEL) RET_ADDRESS_EQ27     -> ROM[20237] (0x4F0D)
+  (LABEL) output.backspace$if_true2 -> ROM[20244] (0x4F14)
+  (LABEL) output.backspace$if_false2 -> ROM[20255] (0x4F1F)
+  (LABEL) output.backspace$if_end1 -> ROM[20277] (0x4F35)
+  (LABEL) output.backspace$if_false0 -> ROM[20288] (0x4F40)
+  (LABEL) output.backspace$if_end0 -> ROM[20300] (0x4F4C)
+  (LABEL) RET_ADDRESS_CALL254  -> ROM[20318] (0x4F5E)
+  (LABEL) screen.init          -> ROM[20329] (0x4F69)
+  (LABEL) RET_ADDRESS_CALL255  -> ROM[20374] (0x4F96)
+  (LABEL) screen.init$while_exp0 -> ROM[20420] (0x4FC4)
+  (LABEL) RET_ADDRESS_LT34     -> ROM[20437] (0x4FD5)
+  (LABEL) screen.init$while_end0 -> ROM[20592] (0x5070)
+  (LABEL) screen.clearscreen   -> ROM[20598] (0x5076)
+  (LABEL) screen.clearscreen$while_exp0 -> ROM[20602] (0x507A)
+  (LABEL) RET_ADDRESS_LT35     -> ROM[20619] (0x508B)
+  (LABEL) screen.clearscreen$while_end0 -> ROM[20695] (0x50D7)
+  (LABEL) screen.updatelocation -> ROM[20701] (0x50DD)
+  (LABEL) screen.updatelocation$if_true0 -> ROM[20714] (0x50EA)
+  (LABEL) screen.updatelocation$if_false0 -> ROM[20798] (0x513E)
+  (LABEL) screen.updatelocation$if_end0 -> ROM[20883] (0x5193)
+  (LABEL) screen.setcolor      -> ROM[20889] (0x5199)
+  (LABEL) screen.drawpixel     -> ROM[20907] (0x51AB)
+  (LABEL) LOOP_screen.drawpixel -> ROM[20909] (0x51AD)
+  (LABEL) RET_ADDRESS_LT36     -> ROM[20931] (0x51C3)
+  (LABEL) RET_ADDRESS_GT26     -> ROM[20948] (0x51D4)
+  (LABEL) RET_ADDRESS_LT37     -> ROM[20968] (0x51E8)
+  (LABEL) RET_ADDRESS_GT27     -> ROM[20990] (0x51FE)
+  (LABEL) screen.drawpixel$if_true0 -> ROM[21002] (0x520A)
+  (LABEL) RET_ADDRESS_CALL256  -> ROM[21020] (0x521C)
+  (LABEL) screen.drawpixel$if_false0 -> ROM[21025] (0x5221)
+  (LABEL) RET_ADDRESS_CALL257  -> ROM[21050] (0x523A)
+  (LABEL) RET_ADDRESS_CALL258  -> ROM[21088] (0x5260)
+  (LABEL) RET_ADDRESS_CALL259  -> ROM[21124] (0x5284)
+  (LABEL) RET_ADDRESS_CALL260  -> ROM[21193] (0x52C9)
+  (LABEL) screen.drawconditional -> ROM[21204] (0x52D4)
+  (LABEL) screen.drawconditional$if_true0 -> ROM[21219] (0x52E3)
+  (LABEL) RET_ADDRESS_CALL261  -> ROM[21245] (0x52FD)
+  (LABEL) screen.drawconditional$if_false0 -> ROM[21252] (0x5304)
+  (LABEL) RET_ADDRESS_CALL262  -> ROM[21278] (0x531E)
+  (LABEL) screen.drawconditional$if_end0 -> ROM[21283] (0x5323)
+  (LABEL) screen.drawline      -> ROM[21289] (0x5329)
+  (LABEL) LOOP_screen.drawline -> ROM[21291] (0x532B)
+  (LABEL) RET_ADDRESS_LT38     -> ROM[21313] (0x5341)
+  (LABEL) RET_ADDRESS_GT28     -> ROM[21331] (0x5353)
+  (LABEL) RET_ADDRESS_LT39     -> ROM[21351] (0x5367)
+  (LABEL) RET_ADDRESS_GT29     -> ROM[21375] (0x537F)
+  (LABEL) screen.drawline$if_true0 -> ROM[21387] (0x538B)
+  (LABEL) RET_ADDRESS_CALL263  -> ROM[21405] (0x539D)
+  (LABEL) screen.drawline$if_false0 -> ROM[21410] (0x53A2)
+  (LABEL) RET_ADDRESS_CALL264  -> ROM[21442] (0x53C2)
+  (LABEL) RET_ADDRESS_CALL265  -> ROM[21483] (0x53EB)
+  (LABEL) RET_ADDRESS_LT40     -> ROM[21511] (0x5407)
+  (LABEL) RET_ADDRESS_LT41     -> ROM[21551] (0x542F)
+  (LABEL) RET_ADDRESS_LT42     -> ROM[21587] (0x5453)
+  (LABEL) screen.drawline$if_true1 -> ROM[21604] (0x5464)
+  (LABEL) screen.drawline$if_false1 -> ROM[21698] (0x54C2)
+  (LABEL) screen.drawline$if_true2 -> ROM[21714] (0x54D2)
+  (LABEL) RET_ADDRESS_GT30     -> ROM[21830] (0x5546)
+  (LABEL) screen.drawline$if_false2 -> ROM[21844] (0x5554)
+  (LABEL) RET_ADDRESS_GT31     -> ROM[21910] (0x5596)
+  (LABEL) screen.drawline$if_end2 -> ROM[21922] (0x55A2)
+  (LABEL) RET_ADDRESS_CALL266  -> ROM[21948] (0x55BC)
+  (LABEL) RET_ADDRESS_CALL267  -> ROM[21998] (0x55EE)
+  (LABEL) RET_ADDRESS_CALL268  -> ROM[22050] (0x5622)
+  (LABEL) RET_ADDRESS_CALL269  -> ROM[22097] (0x5651)
+  (LABEL) screen.drawline$while_exp0 -> ROM[22102] (0x5656)
+  (LABEL) RET_ADDRESS_LT43     -> ROM[22122] (0x566A)
+  (LABEL) RET_ADDRESS_LT44     -> ROM[22147] (0x5683)
+  (LABEL) screen.drawline$if_true3 -> ROM[22154] (0x568A)
+  (LABEL) screen.drawline$if_false3 -> ROM[22189] (0x56AD)
+  (LABEL) screen.drawline$if_true4 -> ROM[22238] (0x56DE)
+  (LABEL) screen.drawline$if_false4 -> ROM[22262] (0x56F6)
+  (LABEL) screen.drawline$if_end4 -> ROM[22284] (0x570C)
+  (LABEL) screen.drawline$if_end3 -> ROM[22284] (0x570C)
+  (LABEL) RET_ADDRESS_CALL270  -> ROM[22341] (0x5745)
+  (LABEL) screen.drawline$while_end0 -> ROM[22348] (0x574C)
+  (LABEL) screen.drawrectangle -> ROM[22354] (0x5752)
+  (LABEL) LOOP_screen.drawrectangle -> ROM[22356] (0x5754)
+  (LABEL) RET_ADDRESS_GT32     -> ROM[22382] (0x576E)
+  (LABEL) RET_ADDRESS_GT33     -> ROM[22402] (0x5782)
+  (LABEL) RET_ADDRESS_LT45     -> ROM[22422] (0x5796)
+  (LABEL) RET_ADDRESS_GT34     -> ROM[22445] (0x57AD)
+  (LABEL) RET_ADDRESS_LT46     -> ROM[22465] (0x57C1)
+  (LABEL) RET_ADDRESS_GT35     -> ROM[22489] (0x57D9)
+  (LABEL) screen.drawrectangle$if_true0 -> ROM[22501] (0x57E5)
+  (LABEL) RET_ADDRESS_CALL271  -> ROM[22519] (0x57F7)
+  (LABEL) screen.drawrectangle$if_false0 -> ROM[22524] (0x57FC)
+  (LABEL) RET_ADDRESS_CALL272  -> ROM[22549] (0x5815)
+  (LABEL) RET_ADDRESS_CALL273  -> ROM[22591] (0x583F)
+  (LABEL) RET_ADDRESS_CALL274  -> ROM[22634] (0x586A)
+  (LABEL) RET_ADDRESS_CALL275  -> ROM[22678] (0x5896)
+  (LABEL) RET_ADDRESS_CALL276  -> ROM[22835] (0x5933)
+  (LABEL) screen.drawrectangle$while_exp0 -> ROM[22885] (0x5965)
+  (LABEL) RET_ADDRESS_GT36     -> ROM[22905] (0x5979)
+  (LABEL) RET_ADDRESS_EQ28     -> ROM[22958] (0x59AE)
+  (LABEL) screen.drawrectangle$if_true1 -> ROM[22965] (0x59B5)
+  (LABEL) RET_ADDRESS_CALL277  -> ROM[23007] (0x59DF)
+  (LABEL) screen.drawrectangle$if_false1 -> ROM[23014] (0x59E6)
+  (LABEL) RET_ADDRESS_CALL278  -> ROM[23042] (0x5A02)
+  (LABEL) screen.drawrectangle$while_exp1 -> ROM[23069] (0x5A1D)
+  (LABEL) RET_ADDRESS_LT47     -> ROM[23087] (0x5A2F)
+  (LABEL) RET_ADDRESS_CALL279  -> ROM[23122] (0x5A52)
+  (LABEL) screen.drawrectangle$while_end1 -> ROM[23151] (0x5A6F)
+  (LABEL) RET_ADDRESS_CALL280  -> ROM[23179] (0x5A8B)
+  (LABEL) screen.drawrectangle$if_end1 -> ROM[23184] (0x5A90)
+  (LABEL) screen.drawrectangle$while_end0 -> ROM[23245] (0x5ACD)
+  (LABEL) screen.drawhorizontal -> ROM[23251] (0x5AD3)
+  (LABEL) LOOP_screen.drawhorizontal -> ROM[23253] (0x5AD5)
+  (LABEL) RET_ADDRESS_CALL281  -> ROM[23287] (0x5AF7)
+  (LABEL) RET_ADDRESS_CALL282  -> ROM[23326] (0x5B1E)
+  (LABEL) RET_ADDRESS_GT37     -> ROM[23357] (0x5B3D)
+  (LABEL) RET_ADDRESS_LT48     -> ROM[23374] (0x5B4E)
+  (LABEL) RET_ADDRESS_LT49     -> ROM[23398] (0x5B66)
+  (LABEL) RET_ADDRESS_GT38     -> ROM[23424] (0x5B80)
+  (LABEL) screen.drawhorizontal$if_true0 -> ROM[23436] (0x5B8C)
+  (LABEL) RET_ADDRESS_CALL283  -> ROM[23461] (0x5BA5)
+  (LABEL) RET_ADDRESS_CALL284  -> ROM[23500] (0x5BCC)
+  (LABEL) RET_ADDRESS_CALL285  -> ROM[23539] (0x5BF3)
+  (LABEL) RET_ADDRESS_CALL286  -> ROM[23579] (0x5C1B)
+  (LABEL) RET_ADDRESS_CALL287  -> ROM[23623] (0x5C47)
+  (LABEL) RET_ADDRESS_CALL288  -> ROM[23665] (0x5C71)
+  (LABEL) RET_ADDRESS_CALL289  -> ROM[23820] (0x5D0C)
+  (LABEL) RET_ADDRESS_EQ29     -> ROM[23915] (0x5D6B)
+  (LABEL) screen.drawhorizontal$if_true1 -> ROM[23922] (0x5D72)
+  (LABEL) RET_ADDRESS_CALL290  -> ROM[23964] (0x5D9C)
+  (LABEL) screen.drawhorizontal$if_false1 -> ROM[23971] (0x5DA3)
+  (LABEL) RET_ADDRESS_CALL291  -> ROM[23999] (0x5DBF)
+  (LABEL) screen.drawhorizontal$while_exp0 -> ROM[24026] (0x5DDA)
+  (LABEL) RET_ADDRESS_LT50     -> ROM[24046] (0x5DEE)
+  (LABEL) RET_ADDRESS_CALL292  -> ROM[24081] (0x5E11)
+  (LABEL) screen.drawhorizontal$while_end0 -> ROM[24110] (0x5E2E)
+  (LABEL) RET_ADDRESS_CALL293  -> ROM[24140] (0x5E4C)
+  (LABEL) screen.drawhorizontal$if_end1 -> ROM[24145] (0x5E51)
+  (LABEL) screen.drawhorizontal$if_false0 -> ROM[24145] (0x5E51)
+  (LABEL) screen.drawsymetric  -> ROM[24151] (0x5E57)
+  (LABEL) RET_ADDRESS_CALL294  -> ROM[24224] (0x5EA0)
+  (LABEL) RET_ADDRESS_CALL295  -> ROM[24302] (0x5EEE)
+  (LABEL) RET_ADDRESS_CALL296  -> ROM[24381] (0x5F3D)
+  (LABEL) RET_ADDRESS_CALL297  -> ROM[24460] (0x5F8C)
+  (LABEL) screen.drawcircle    -> ROM[24471] (0x5F97)
+  (LABEL) LOOP_screen.drawcircle -> ROM[24473] (0x5F99)
+  (LABEL) RET_ADDRESS_LT51     -> ROM[24495] (0x5FAF)
+  (LABEL) RET_ADDRESS_GT39     -> ROM[24512] (0x5FC0)
+  (LABEL) RET_ADDRESS_LT52     -> ROM[24532] (0x5FD4)
+  (LABEL) RET_ADDRESS_GT40     -> ROM[24554] (0x5FEA)
+  (LABEL) screen.drawcircle$if_true0 -> ROM[24566] (0x5FF6)
+  (LABEL) RET_ADDRESS_CALL298  -> ROM[24584] (0x6008)
+  (LABEL) screen.drawcircle$if_false0 -> ROM[24589] (0x600D)
+  (LABEL) RET_ADDRESS_LT53     -> ROM[24617] (0x6029)
+  (LABEL) RET_ADDRESS_GT41     -> ROM[24647] (0x6047)
+  (LABEL) RET_ADDRESS_LT54     -> ROM[24680] (0x6068)
+  (LABEL) RET_ADDRESS_GT42     -> ROM[24715] (0x608B)
+  (LABEL) screen.drawcircle$if_true1 -> ROM[24727] (0x6097)
+  (LABEL) RET_ADDRESS_CALL299  -> ROM[24745] (0x60A9)
+  (LABEL) screen.drawcircle$if_false1 -> ROM[24750] (0x60AE)
+  (LABEL) RET_ADDRESS_CALL300  -> ROM[24828] (0x60FC)
+  (LABEL) screen.drawcircle$while_exp0 -> ROM[24833] (0x6101)
+  (LABEL) RET_ADDRESS_GT43     -> ROM[24851] (0x6113)
+  (LABEL) RET_ADDRESS_LT55     -> ROM[24875] (0x612B)
+  (LABEL) screen.drawcircle$if_true2 -> ROM[24882] (0x6132)
+  (LABEL) RET_ADDRESS_CALL301  -> ROM[24915] (0x6153)
+  (LABEL) screen.drawcircle$if_false2 -> ROM[24940] (0x616C)
+  (LABEL) RET_ADDRESS_CALL302  -> ROM[24985] (0x6199)
+  (LABEL) screen.drawcircle$if_end2 -> ROM[25030] (0x61C6)
+  (LABEL) RET_ADDRESS_CALL303  -> ROM[25092] (0x6204)
+  (LABEL) screen.drawcircle$while_end0 -> ROM[25099] (0x620B)
+  (LABEL) string.new           -> ROM[25105] (0x6211)
+  (LABEL) RET_ADDRESS_CALL304  -> ROM[25123] (0x6223)
+  (LABEL) RET_ADDRESS_LT56     -> ROM[25143] (0x6237)
+  (LABEL) string.new$if_true0  -> ROM[25150] (0x623E)
+  (LABEL) RET_ADDRESS_CALL305  -> ROM[25168] (0x6250)
+  (LABEL) string.new$if_false0 -> ROM[25173] (0x6255)
+  (LABEL) RET_ADDRESS_GT44     -> ROM[25188] (0x6264)
+  (LABEL) string.new$if_true1  -> ROM[25195] (0x626B)
+  (LABEL) RET_ADDRESS_CALL306  -> ROM[25214] (0x627E)
+  (LABEL) string.new$if_false1 -> ROM[25220] (0x6284)
+  (LABEL) string.dispose       -> ROM[25252] (0x62A4)
+  (LABEL) RET_ADDRESS_GT45     -> ROM[25279] (0x62BF)
+  (LABEL) string.dispose$if_true0 -> ROM[25286] (0x62C6)
+  (LABEL) RET_ADDRESS_CALL307  -> ROM[25305] (0x62D9)
+  (LABEL) string.dispose$if_false0 -> ROM[25310] (0x62DE)
+  (LABEL) RET_ADDRESS_CALL308  -> ROM[25328] (0x62F0)
+  (LABEL) string.length        -> ROM[25339] (0x62FB)
+  (LABEL) string.charat        -> ROM[25361] (0x6311)
+  (LABEL) RET_ADDRESS_LT57     -> ROM[25388] (0x632C)
+  (LABEL) RET_ADDRESS_GT46     -> ROM[25407] (0x633F)
+  (LABEL) RET_ADDRESS_EQ30     -> ROM[25431] (0x6357)
+  (LABEL) string.charat$if_true0 -> ROM[25443] (0x6363)
+  (LABEL) RET_ADDRESS_CALL309  -> ROM[25461] (0x6375)
+  (LABEL) string.charat$if_false0 -> ROM[25466] (0x637A)
+  (LABEL) string.setcharat     -> ROM[25499] (0x639B)
+  (LABEL) RET_ADDRESS_LT58     -> ROM[25526] (0x63B6)
+  (LABEL) RET_ADDRESS_GT47     -> ROM[25545] (0x63C9)
+  (LABEL) RET_ADDRESS_EQ31     -> ROM[25569] (0x63E1)
+  (LABEL) string.setcharat$if_true0 -> ROM[25581] (0x63ED)
+  (LABEL) RET_ADDRESS_CALL310  -> ROM[25599] (0x63FF)
+  (LABEL) string.setcharat$if_false0 -> ROM[25604] (0x6404)
+  (LABEL) string.appendchar    -> ROM[25659] (0x643B)
+  (LABEL) RET_ADDRESS_EQ32     -> ROM[25690] (0x645A)
+  (LABEL) string.appendchar$if_true0 -> ROM[25697] (0x6461)
+  (LABEL) RET_ADDRESS_CALL311  -> ROM[25715] (0x6473)
+  (LABEL) string.appendchar$if_false0 -> ROM[25720] (0x6478)
+  (LABEL) string.eraselastchar -> ROM[25801] (0x64C9)
+  (LABEL) RET_ADDRESS_EQ33     -> ROM[25829] (0x64E5)
+  (LABEL) string.eraselastchar$if_true0 -> ROM[25836] (0x64EC)
+  (LABEL) RET_ADDRESS_CALL312  -> ROM[25854] (0x64FE)
+  (LABEL) string.eraselastchar$if_false0 -> ROM[25859] (0x6503)
+  (LABEL) string.intvalue      -> ROM[25889] (0x6521)
+  (LABEL) LOOP_string.intvalue -> ROM[25891] (0x6523)
+  (LABEL) RET_ADDRESS_EQ34     -> ROM[25926] (0x6546)
+  (LABEL) string.intvalue$if_true0 -> ROM[25933] (0x654D)
+  (LABEL) string.intvalue$if_false0 -> ROM[25939] (0x6553)
+  (LABEL) RET_ADDRESS_EQ35     -> ROM[25992] (0x6588)
+  (LABEL) string.intvalue$if_true1 -> ROM[25999] (0x658F)
+  (LABEL) string.intvalue$if_false1 -> ROM[26025] (0x65A9)
+  (LABEL) string.intvalue$while_exp0 -> ROM[26025] (0x65A9)
+  (LABEL) RET_ADDRESS_LT59     -> ROM[26044] (0x65BC)
+  (LABEL) RET_ADDRESS_LT60     -> ROM[26131] (0x6613)
+  (LABEL) RET_ADDRESS_GT48     -> ROM[26149] (0x6625)
+  (LABEL) string.intvalue$if_true2 -> ROM[26181] (0x6645)
+  (LABEL) RET_ADDRESS_CALL313  -> ROM[26206] (0x665E)
+  (LABEL) string.intvalue$if_false2 -> ROM[26247] (0x6687)
+  (LABEL) string.intvalue$while_end0 -> ROM[26249] (0x6689)
+  (LABEL) string.intvalue$if_true3 -> ROM[26265] (0x6699)
+  (LABEL) string.intvalue$if_false3 -> ROM[26282] (0x66AA)
+  (LABEL) string.setint        -> ROM[26291] (0x66B3)
+  (LABEL) LOOP_string.setint   -> ROM[26293] (0x66B5)
+  (LABEL) RET_ADDRESS_EQ36     -> ROM[26327] (0x66D7)
+  (LABEL) string.setint$if_true0 -> ROM[26334] (0x66DE)
+  (LABEL) RET_ADDRESS_CALL314  -> ROM[26352] (0x66F0)
+  (LABEL) string.setint$if_false0 -> ROM[26357] (0x66F5)
+  (LABEL) RET_ADDRESS_CALL315  -> ROM[26375] (0x6707)
+  (LABEL) RET_ADDRESS_LT61     -> ROM[26397] (0x671D)
+  (LABEL) string.setint$if_true1 -> ROM[26404] (0x6724)
+  (LABEL) string.setint$if_false1 -> ROM[26436] (0x6744)
+  (LABEL) string.setint$while_exp0 -> ROM[26449] (0x6751)
+  (LABEL) RET_ADDRESS_GT49     -> ROM[26464] (0x6760)
+  (LABEL) RET_ADDRESS_CALL316  -> ROM[26497] (0x6781)
+  (LABEL) RET_ADDRESS_CALL317  -> ROM[26561] (0x67C1)
+  (LABEL) string.setint$while_end0 -> ROM[26630] (0x6806)
+  (LABEL) string.setint$if_true2 -> ROM[26646] (0x6816)
+  (LABEL) string.setint$if_false2 -> ROM[26716] (0x685C)
+  (LABEL) RET_ADDRESS_LT62     -> ROM[26734] (0x686E)
+  (LABEL) string.setint$if_true3 -> ROM[26741] (0x6875)
+  (LABEL) RET_ADDRESS_CALL318  -> ROM[26759] (0x6887)
+  (LABEL) string.setint$if_false3 -> ROM[26764] (0x688C)
+  (LABEL) RET_ADDRESS_EQ37     -> ROM[26779] (0x689B)
+  (LABEL) string.setint$if_true4 -> ROM[26786] (0x68A2)
+  (LABEL) string.setint$if_false4 -> ROM[26843] (0x68DB)
+  (LABEL) string.setint$while_exp1 -> ROM[26854] (0x68E6)
+  (LABEL) RET_ADDRESS_LT63     -> ROM[26873] (0x68F9)
+  (LABEL) string.setint$while_end1 -> ROM[27003] (0x697B)
+  (LABEL) string.setint$if_end4 -> ROM[27003] (0x697B)
+  (LABEL) RET_ADDRESS_CALL319  -> ROM[27023] (0x698F)
+  (LABEL) string.newline       -> ROM[27034] (0x699A)
+  (LABEL) string.backspace     -> ROM[27042] (0x69A2)
+  (LABEL) string.doublequote   -> ROM[27050] (0x69AA)
+  (LABEL) sys.init             -> ROM[27058] (0x69B2)
+  (LABEL) RET_ADDRESS_CALL320  -> ROM[27070] (0x69BE)
+  (LABEL) RET_ADDRESS_CALL321  -> ROM[27087] (0x69CF)
+  (LABEL) RET_ADDRESS_CALL322  -> ROM[27104] (0x69E0)
+  (LABEL) RET_ADDRESS_CALL323  -> ROM[27121] (0x69F1)
+  (LABEL) RET_ADDRESS_CALL324  -> ROM[27138] (0x6A02)
+  (LABEL) RET_ADDRESS_CALL325  -> ROM[27155] (0x6A13)
+  (LABEL) RET_ADDRESS_CALL326  -> ROM[27172] (0x6A24)
+  (LABEL) sys.halt             -> ROM[27177] (0x6A29)
+  (LABEL) sys.halt$while_exp0  -> ROM[27177] (0x6A29)
+  (LABEL) sys.halt$while_end0  -> ROM[27194] (0x6A3A)
+  (LABEL) sys.wait             -> ROM[27194] (0x6A3A)
+  (LABEL) RET_ADDRESS_LT64     -> ROM[27213] (0x6A4D)
+  (LABEL) sys.wait$if_true0    -> ROM[27220] (0x6A54)
+  (LABEL) RET_ADDRESS_CALL327  -> ROM[27236] (0x6A64)
+  (LABEL) sys.wait$if_false0   -> ROM[27241] (0x6A69)
+  (LABEL) sys.wait$while_exp0  -> ROM[27241] (0x6A69)
+  (LABEL) RET_ADDRESS_GT50     -> ROM[27256] (0x6A78)
+  (LABEL) sys.wait$while_exp1  -> ROM[27276] (0x6A8C)
+  (LABEL) RET_ADDRESS_GT51     -> ROM[27291] (0x6A9B)
+  (LABEL) sys.wait$while_end1  -> ROM[27323] (0x6ABB)
+  (LABEL) sys.wait$while_end0  -> ROM[27347] (0x6AD3)
+  (LABEL) sys.error            -> ROM[27353] (0x6AD9)
+  (LABEL) RET_ADDRESS_CALL328  -> ROM[27371] (0x6AEB)
+  (LABEL) RET_ADDRESS_CALL329  -> ROM[27389] (0x6AFD)
+  (LABEL) RET_ADDRESS_CALL330  -> ROM[27407] (0x6B0F)
+  (LABEL) RET_ADDRESS_CALL331  -> ROM[27425] (0x6B21)
+  (LABEL) RET_ADDRESS_CALL332  -> ROM[27437] (0x6B2D)
+  (LABEL) RET_ADDRESS_CALL333  -> ROM[27461] (0x6B45)
+  (LABEL) RET_ADDRESS_CALL334  -> ROM[27478] (0x6B56)
+
+--- USER-DEFINED VARIABLES (RAM Addresses) ---
+  (VAR)   ponggame.0           -> RAM[16] (0x0010)
+  (VAR)   math.1               -> RAM[17] (0x0011)
+  (VAR)   math.0               -> RAM[18] (0x0012)
+  (VAR)   memory.0             -> RAM[19] (0x0013)
+  (VAR)   output.4             -> RAM[20] (0x0014)
+  (VAR)   output.2             -> RAM[21] (0x0015)
+  (VAR)   output.1             -> RAM[22] (0x0016)
+  (VAR)   output.0             -> RAM[23] (0x0017)
+  (VAR)   output.3             -> RAM[24] (0x0018)
+  (VAR)   output.5             -> RAM[25] (0x0019)
+  (VAR)   output.6             -> RAM[26] (0x001A)
+  (VAR)   screen.1             -> RAM[27] (0x001B)
+  (VAR)   screen.2             -> RAM[28] (0x001C)
+  (VAR)   screen.0             -> RAM[29] (0x001D)
+
+--- COMPLETE RESOLVED SYMBOL TABLE ---
+  R0                   : 0      [PREDEFINED]
+  SP                   : 0      [PREDEFINED]
+  LCL                  : 1      [PREDEFINED]
+  R1                   : 1      [PREDEFINED]
+  ARG                  : 2      [PREDEFINED]
+  R2                   : 2      [PREDEFINED]
+  R3                   : 3      [PREDEFINED]
+  THIS                 : 3      [PREDEFINED]
+  R4                   : 4      [PREDEFINED]
+  THAT                 : 4      [PREDEFINED]
+  R5                   : 5      [PREDEFINED]
+  R6                   : 6      [PREDEFINED]
+  R7                   : 7      [PREDEFINED]
+  R8                   : 8      [PREDEFINED]
+  R9                   : 9      [PREDEFINED]
+  R10                  : 10     [PREDEFINED]
+  R11                  : 11     [PREDEFINED]
+  R12                  : 12     [PREDEFINED]
+  R13                  : 13     [PREDEFINED]
+  R14                  : 14     [PREDEFINED]
+  R15                  : 15     [PREDEFINED]
+  ponggame.0           : 16     [VARIABLE]
+  math.1               : 17     [VARIABLE]
+  math.0               : 18     [VARIABLE]
+  END_EQ               : 19     [LABEL]
+  memory.0             : 19     [VARIABLE]
+  output.4             : 20     [VARIABLE]
+  output.2             : 21     [VARIABLE]
+  output.1             : 22     [VARIABLE]
+  output.0             : 23     [VARIABLE]
+  output.3             : 24     [VARIABLE]
+  output.5             : 25     [VARIABLE]
+  output.6             : 26     [VARIABLE]
+  screen.1             : 27     [VARIABLE]
+  screen.2             : 28     [VARIABLE]
+  screen.0             : 29     [VARIABLE]
+  END_GT               : 35     [LABEL]
+  END_LT               : 51     [LABEL]
+  RET_ADDRESS_CALL0    : 145    [LABEL]
+  ball.new             : 145    [LABEL]
+  RET_ADDRESS_CALL1    : 163    [LABEL]
+  RET_ADDRESS_CALL2    : 333    [LABEL]
+  ball.dispose         : 346    [LABEL]
+  RET_ADDRESS_CALL3    : 376    [LABEL]
+  ball.show            : 387    [LABEL]
+  RET_ADDRESS_CALL4    : 418    [LABEL]
+  RET_ADDRESS_CALL5    : 441    [LABEL]
+  ball.hide            : 452    [LABEL]
+  RET_ADDRESS_CALL6    : 480    [LABEL]
+  RET_ADDRESS_CALL7    : 503    [LABEL]
+  ball.draw            : 514    [LABEL]
+  RET_ADDRESS_CALL8    : 588    [LABEL]
+  ball.getleft         : 599    [LABEL]
+  ball.getright        : 620    [LABEL]
+  ball.setdestination  : 652    [LABEL]
+  LOOP_ball.setdestination : 654    [LABEL]
+  RET_ADDRESS_CALL9    : 747    [LABEL]
+  RET_ADDRESS_CALL10   : 774    [LABEL]
+  RET_ADDRESS_LT0      : 798    [LABEL]
+  ball.setdestination$if_true0 : 826    [LABEL]
+  RET_ADDRESS_LT1      : 886    [LABEL]
+  RET_ADDRESS_LT2      : 916    [LABEL]
+  ball.setdestination$if_false0 : 930    [LABEL]
+  RET_ADDRESS_LT3      : 948    [LABEL]
+  RET_ADDRESS_LT4      : 979    [LABEL]
+  ball.setdestination$if_end0 : 991    [LABEL]
+  RET_ADDRESS_CALL11   : 1016   [LABEL]
+  RET_ADDRESS_CALL12   : 1062   [LABEL]
+  RET_ADDRESS_CALL13   : 1109   [LABEL]
+  ball.move            : 1126   [LABEL]
+  RET_ADDRESS_CALL14   : 1156   [LABEL]
+  RET_ADDRESS_LT5      : 1178   [LABEL]
+  ball.move$if_true0   : 1185   [LABEL]
+  ball.move$if_false0  : 1219   [LABEL]
+  ball.move$if_true1   : 1267   [LABEL]
+  ball.move$if_true2   : 1283   [LABEL]
+  ball.move$if_false2  : 1309   [LABEL]
+  ball.move$if_end2    : 1333   [LABEL]
+  ball.move$if_false1  : 1335   [LABEL]
+  ball.move$if_true3   : 1351   [LABEL]
+  ball.move$if_false3  : 1377   [LABEL]
+  ball.move$if_end0    : 1401   [LABEL]
+  ball.move$if_end1    : 1401   [LABEL]
+  ball.move$if_end3    : 1401   [LABEL]
+  ball.move$if_true4   : 1417   [LABEL]
+  ball.move$if_true5   : 1433   [LABEL]
+  ball.move$if_false5  : 1459   [LABEL]
+  ball.move$if_end5    : 1483   [LABEL]
+  ball.move$if_false4  : 1485   [LABEL]
+  ball.move$if_true6   : 1501   [LABEL]
+  ball.move$if_false6  : 1527   [LABEL]
+  ball.move$if_end4    : 1551   [LABEL]
+  ball.move$if_end6    : 1551   [LABEL]
+  RET_ADDRESS_GT0      : 1571   [LABEL]
+  ball.move$if_true7   : 1581   [LABEL]
+  ball.move$if_false7  : 1612   [LABEL]
+  RET_ADDRESS_LT6      : 1632   [LABEL]
+  ball.move$if_true8   : 1642   [LABEL]
+  ball.move$if_false8  : 1675   [LABEL]
+  RET_ADDRESS_GT1      : 1695   [LABEL]
+  ball.move$if_true9   : 1705   [LABEL]
+  ball.move$if_false9  : 1738   [LABEL]
+  RET_ADDRESS_LT7      : 1758   [LABEL]
+  ball.move$if_true10  : 1768   [LABEL]
+  ball.move$if_false10 : 1801   [LABEL]
+  RET_ADDRESS_CALL15   : 1819   [LABEL]
+  ball.bounce          : 1835   [LABEL]
+  LOOP_ball.bounce     : 1837   [LABEL]
+  RET_ADDRESS_CALL16   : 1882   [LABEL]
+  RET_ADDRESS_CALL17   : 1916   [LABEL]
+  RET_ADDRESS_EQ0      : 1939   [LABEL]
+  ball.bounce$if_true0 : 1946   [LABEL]
+  ball.bounce$if_false0 : 1963   [LABEL]
+  RET_ADDRESS_LT8      : 1979   [LABEL]
+  RET_ADDRESS_EQ1      : 1997   [LABEL]
+  RET_ADDRESS_LT9      : 2018   [LABEL]
+  RET_ADDRESS_EQ2      : 2042   [LABEL]
+  ball.bounce$if_true1 : 2054   [LABEL]
+  ball.bounce$if_false1 : 2071   [LABEL]
+  ball.bounce$if_end0  : 2086   [LABEL]
+  ball.bounce$if_end1  : 2086   [LABEL]
+  RET_ADDRESS_EQ3      : 2103   [LABEL]
+  ball.bounce$if_true2 : 2110   [LABEL]
+  RET_ADDRESS_CALL18   : 2153   [LABEL]
+  RET_ADDRESS_CALL19   : 2173   [LABEL]
+  RET_ADDRESS_CALL20   : 2214   [LABEL]
+  ball.bounce$if_false2 : 2227   [LABEL]
+  RET_ADDRESS_EQ4      : 2246   [LABEL]
+  ball.bounce$if_true3 : 2253   [LABEL]
+  RET_ADDRESS_CALL21   : 2290   [LABEL]
+  RET_ADDRESS_CALL22   : 2310   [LABEL]
+  RET_ADDRESS_CALL23   : 2351   [LABEL]
+  ball.bounce$if_false3 : 2364   [LABEL]
+  RET_ADDRESS_EQ5      : 2383   [LABEL]
+  ball.bounce$if_true4 : 2390   [LABEL]
+  RET_ADDRESS_CALL24   : 2432   [LABEL]
+  RET_ADDRESS_CALL25   : 2453   [LABEL]
+  RET_ADDRESS_CALL26   : 2494   [LABEL]
+  ball.bounce$if_false4 : 2507   [LABEL]
+  RET_ADDRESS_CALL27   : 2543   [LABEL]
+  RET_ADDRESS_CALL28   : 2564   [LABEL]
+  RET_ADDRESS_CALL29   : 2605   [LABEL]
+  ball.bounce$if_end2  : 2616   [LABEL]
+  ball.bounce$if_end3  : 2616   [LABEL]
+  ball.bounce$if_end4  : 2616   [LABEL]
+  RET_ADDRESS_CALL30   : 2648   [LABEL]
+  bat.new              : 2659   [LABEL]
+  RET_ADDRESS_CALL31   : 2677   [LABEL]
+  RET_ADDRESS_CALL32   : 2773   [LABEL]
+  bat.dispose          : 2786   [LABEL]
+  RET_ADDRESS_CALL33   : 2816   [LABEL]
+  bat.show             : 2827   [LABEL]
+  RET_ADDRESS_CALL34   : 2858   [LABEL]
+  RET_ADDRESS_CALL35   : 2881   [LABEL]
+  bat.hide             : 2892   [LABEL]
+  RET_ADDRESS_CALL36   : 2920   [LABEL]
+  RET_ADDRESS_CALL37   : 2943   [LABEL]
+  bat.draw             : 2954   [LABEL]
+  RET_ADDRESS_CALL38   : 3033   [LABEL]
+  bat.setdirection     : 3044   [LABEL]
+  bat.getleft          : 3078   [LABEL]
+  bat.getright         : 3099   [LABEL]
+  bat.setwidth         : 3133   [LABEL]
+  RET_ADDRESS_CALL39   : 3163   [LABEL]
+  RET_ADDRESS_CALL40   : 3200   [LABEL]
+  bat.move             : 3211   [LABEL]
+  RET_ADDRESS_EQ6      : 3240   [LABEL]
+  bat.move$if_true0    : 3247   [LABEL]
+  RET_ADDRESS_LT10     : 3286   [LABEL]
+  bat.move$if_true1    : 3293   [LABEL]
+  bat.move$if_false1   : 3303   [LABEL]
+  RET_ADDRESS_CALL41   : 3319   [LABEL]
+  RET_ADDRESS_CALL42   : 3424   [LABEL]
+  RET_ADDRESS_CALL43   : 3448   [LABEL]
+  RET_ADDRESS_CALL44   : 3518   [LABEL]
+  bat.move$if_false0   : 3525   [LABEL]
+  RET_ADDRESS_GT2      : 3579   [LABEL]
+  bat.move$if_true2    : 3586   [LABEL]
+  bat.move$if_false2   : 3611   [LABEL]
+  RET_ADDRESS_CALL45   : 3627   [LABEL]
+  RET_ADDRESS_CALL46   : 3706   [LABEL]
+  RET_ADDRESS_CALL47   : 3730   [LABEL]
+  RET_ADDRESS_CALL48   : 3826   [LABEL]
+  bat.move$if_end0     : 3831   [LABEL]
+  main.main            : 3837   [LABEL]
+  RET_ADDRESS_CALL49   : 3853   [LABEL]
+  RET_ADDRESS_CALL50   : 3870   [LABEL]
+  RET_ADDRESS_CALL51   : 3895   [LABEL]
+  RET_ADDRESS_CALL52   : 3919   [LABEL]
+  ponggame.new         : 3930   [LABEL]
+  RET_ADDRESS_CALL53   : 3948   [LABEL]
+  RET_ADDRESS_CALL54   : 3965   [LABEL]
+  RET_ADDRESS_CALL55   : 4026   [LABEL]
+  RET_ADDRESS_CALL56   : 4076   [LABEL]
+  RET_ADDRESS_CALL57   : 4111   [LABEL]
+  RET_ADDRESS_CALL58   : 4150   [LABEL]
+  RET_ADDRESS_CALL59   : 4177   [LABEL]
+  RET_ADDRESS_CALL60   : 4200   [LABEL]
+  RET_ADDRESS_CALL61   : 4218   [LABEL]
+  RET_ADDRESS_CALL62   : 4236   [LABEL]
+  RET_ADDRESS_CALL63   : 4254   [LABEL]
+  RET_ADDRESS_CALL64   : 4272   [LABEL]
+  RET_ADDRESS_CALL65   : 4290   [LABEL]
+  RET_ADDRESS_CALL66   : 4308   [LABEL]
+  RET_ADDRESS_CALL67   : 4326   [LABEL]
+  RET_ADDRESS_CALL68   : 4344   [LABEL]
+  RET_ADDRESS_CALL69   : 4356   [LABEL]
+  ponggame.dispose     : 4419   [LABEL]
+  RET_ADDRESS_CALL70   : 4450   [LABEL]
+  RET_ADDRESS_CALL71   : 4474   [LABEL]
+  RET_ADDRESS_CALL72   : 4497   [LABEL]
+  ponggame.newinstance : 4508   [LABEL]
+  RET_ADDRESS_CALL73   : 4520   [LABEL]
+  ponggame.getinstance : 4531   [LABEL]
+  ponggame.run         : 4539   [LABEL]
+  ponggame.run$while_exp0 : 4555   [LABEL]
+  ponggame.run$while_exp1 : 4575   [LABEL]
+  RET_ADDRESS_EQ7      : 4590   [LABEL]
+  RET_ADDRESS_CALL74   : 4627   [LABEL]
+  RET_ADDRESS_CALL75   : 4652   [LABEL]
+  RET_ADDRESS_CALL76   : 4675   [LABEL]
+  ponggame.run$while_end1 : 4682   [LABEL]
+  RET_ADDRESS_EQ8      : 4699   [LABEL]
+  ponggame.run$if_true0 : 4706   [LABEL]
+  RET_ADDRESS_CALL77   : 4729   [LABEL]
+  ponggame.run$if_false0 : 4736   [LABEL]
+  RET_ADDRESS_EQ9      : 4753   [LABEL]
+  ponggame.run$if_true1 : 4760   [LABEL]
+  RET_ADDRESS_CALL78   : 4785   [LABEL]
+  ponggame.run$if_false1 : 4792   [LABEL]
+  RET_ADDRESS_EQ10     : 4809   [LABEL]
+  ponggame.run$if_true2 : 4816   [LABEL]
+  ponggame.run$if_end0 : 4831   [LABEL]
+  ponggame.run$if_end1 : 4831   [LABEL]
+  ponggame.run$if_false2 : 4831   [LABEL]
+  ponggame.run$while_exp2 : 4831   [LABEL]
+  RET_ADDRESS_EQ11     : 4846   [LABEL]
+  RET_ADDRESS_CALL79   : 4886   [LABEL]
+  RET_ADDRESS_CALL80   : 4911   [LABEL]
+  RET_ADDRESS_CALL81   : 4934   [LABEL]
+  ponggame.run$while_end2 : 4941   [LABEL]
+  ponggame.run$while_end0 : 4943   [LABEL]
+  ponggame.run$if_true3 : 4959   [LABEL]
+  RET_ADDRESS_CALL82   : 4983   [LABEL]
+  RET_ADDRESS_CALL83   : 5006   [LABEL]
+  RET_ADDRESS_CALL84   : 5024   [LABEL]
+  RET_ADDRESS_CALL85   : 5042   [LABEL]
+  RET_ADDRESS_CALL86   : 5060   [LABEL]
+  RET_ADDRESS_CALL87   : 5078   [LABEL]
+  RET_ADDRESS_CALL88   : 5096   [LABEL]
+  RET_ADDRESS_CALL89   : 5114   [LABEL]
+  RET_ADDRESS_CALL90   : 5132   [LABEL]
+  RET_ADDRESS_CALL91   : 5150   [LABEL]
+  RET_ADDRESS_CALL92   : 5168   [LABEL]
+  RET_ADDRESS_CALL93   : 5180   [LABEL]
+  ponggame.run$if_false3 : 5185   [LABEL]
+  ponggame.moveball    : 5191   [LABEL]
+  LOOP_ponggame.moveball : 5193   [LABEL]
+  RET_ADDRESS_CALL94   : 5231   [LABEL]
+  RET_ADDRESS_GT3      : 5254   [LABEL]
+  RET_ADDRESS_EQ12     : 5275   [LABEL]
+  ponggame.moveball$if_true0 : 5290   [LABEL]
+  RET_ADDRESS_CALL95   : 5337   [LABEL]
+  RET_ADDRESS_CALL96   : 5362   [LABEL]
+  RET_ADDRESS_CALL97   : 5388   [LABEL]
+  RET_ADDRESS_CALL98   : 5415   [LABEL]
+  RET_ADDRESS_EQ13     : 5442   [LABEL]
+  ponggame.moveball$if_true1 : 5449   [LABEL]
+  RET_ADDRESS_GT4      : 5469   [LABEL]
+  RET_ADDRESS_LT11     : 5490   [LABEL]
+  ponggame.moveball$if_true2 : 5522   [LABEL]
+  RET_ADDRESS_LT12     : 5553   [LABEL]
+  ponggame.moveball$if_true3 : 5560   [LABEL]
+  ponggame.moveball$if_false3 : 5576   [LABEL]
+  RET_ADDRESS_GT5      : 5608   [LABEL]
+  ponggame.moveball$if_true4 : 5615   [LABEL]
+  ponggame.moveball$if_end3 : 5625   [LABEL]
+  ponggame.moveball$if_false4 : 5625   [LABEL]
+  RET_ADDRESS_CALL99   : 5684   [LABEL]
+  RET_ADDRESS_CALL100  : 5740   [LABEL]
+  RET_ADDRESS_CALL101  : 5766   [LABEL]
+  ponggame.moveball$if_false1 : 5771   [LABEL]
+  ponggame.moveball$if_false2 : 5771   [LABEL]
+  RET_ADDRESS_CALL102  : 5797   [LABEL]
+  ponggame.moveball$if_false0 : 5802   [LABEL]
+  array.new            : 5808   [LABEL]
+  RET_ADDRESS_GT6      : 5823   [LABEL]
+  array.new$if_true0   : 5833   [LABEL]
+  RET_ADDRESS_CALL103  : 5851   [LABEL]
+  array.new$if_false0  : 5856   [LABEL]
+  RET_ADDRESS_CALL104  : 5875   [LABEL]
+  array.dispose        : 5877   [LABEL]
+  RET_ADDRESS_CALL105  : 5907   [LABEL]
+  keyboard.init        : 5918   [LABEL]
+  keyboard.keypressed  : 5924   [LABEL]
+  RET_ADDRESS_CALL106  : 5942   [LABEL]
+  keyboard.readchar    : 5944   [LABEL]
+  RET_ADDRESS_CALL107  : 5967   [LABEL]
+  keyboard.readchar$while_exp0 : 5972   [LABEL]
+  RET_ADDRESS_EQ14     : 5987   [LABEL]
+  RET_ADDRESS_GT7      : 6002   [LABEL]
+  RET_ADDRESS_CALL108  : 6027   [LABEL]
+  RET_ADDRESS_GT8      : 6048   [LABEL]
+  keyboard.readchar$if_true0 : 6055   [LABEL]
+  keyboard.readchar$if_false0 : 6068   [LABEL]
+  keyboard.readchar$while_end0 : 6070   [LABEL]
+  RET_ADDRESS_CALL109  : 6082   [LABEL]
+  RET_ADDRESS_CALL110  : 6094   [LABEL]
+  RET_ADDRESS_CALL111  : 6118   [LABEL]
+  keyboard.readline    : 6132   [LABEL]
+  LOOP_keyboard.readline : 6134   [LABEL]
+  RET_ADDRESS_CALL112  : 6159   [LABEL]
+  RET_ADDRESS_CALL113  : 6186   [LABEL]
+  RET_ADDRESS_CALL114  : 6203   [LABEL]
+  RET_ADDRESS_CALL115  : 6221   [LABEL]
+  keyboard.readline$while_exp0 : 6228   [LABEL]
+  RET_ADDRESS_CALL116  : 6260   [LABEL]
+  RET_ADDRESS_EQ15     : 6284   [LABEL]
+  keyboard.readline$if_true0 : 6312   [LABEL]
+  RET_ADDRESS_EQ16     : 6331   [LABEL]
+  keyboard.readline$if_true1 : 6338   [LABEL]
+  RET_ADDRESS_CALL117  : 6359   [LABEL]
+  keyboard.readline$if_false1 : 6366   [LABEL]
+  RET_ADDRESS_CALL118  : 6394   [LABEL]
+  keyboard.readline$if_end1 : 6402   [LABEL]
+  keyboard.readline$if_false0 : 6402   [LABEL]
+  keyboard.readline$while_end0 : 6404   [LABEL]
+  keyboard.readint     : 6415   [LABEL]
+  RET_ADDRESS_CALL119  : 6441   [LABEL]
+  RET_ADDRESS_CALL120  : 6466   [LABEL]
+  RET_ADDRESS_CALL121  : 6491   [LABEL]
+  math.init            : 6505   [LABEL]
+  RET_ADDRESS_CALL122  : 6527   [LABEL]
+  RET_ADDRESS_CALL123  : 6550   [LABEL]
+  math.init$while_exp0 : 6596   [LABEL]
+  RET_ADDRESS_LT13     : 6613   [LABEL]
+  math.init$while_end0 : 6768   [LABEL]
+  math.abs             : 6774   [LABEL]
+  RET_ADDRESS_LT14     : 6789   [LABEL]
+  math.abs$if_true0    : 6796   [LABEL]
+  math.abs$if_false0   : 6813   [LABEL]
+  math.multiply        : 6822   [LABEL]
+  LOOP_math.multiply   : 6824   [LABEL]
+  RET_ADDRESS_LT15     : 6846   [LABEL]
+  RET_ADDRESS_GT9      : 6861   [LABEL]
+  RET_ADDRESS_GT10     : 6881   [LABEL]
+  RET_ADDRESS_LT16     : 6896   [LABEL]
+  RET_ADDRESS_CALL124  : 6934   [LABEL]
+  RET_ADDRESS_CALL125  : 6959   [LABEL]
+  RET_ADDRESS_LT17     : 6983   [LABEL]
+  math.multiply$if_true0 : 6990   [LABEL]
+  math.multiply$if_false0 : 7029   [LABEL]
+  math.multiply$while_exp0 : 7029   [LABEL]
+  RET_ADDRESS_LT18     : 7048   [LABEL]
+  RET_ADDRESS_GT11     : 7108   [LABEL]
+  math.multiply$if_true1 : 7115   [LABEL]
+  math.multiply$if_false1 : 7192   [LABEL]
+  math.multiply$while_end0 : 7245   [LABEL]
+  math.multiply$if_true2 : 7261   [LABEL]
+  math.multiply$if_false2 : 7278   [LABEL]
+  math.divide          : 7287   [LABEL]
+  LOOP_math.divide     : 7289   [LABEL]
+  RET_ADDRESS_EQ17     : 7311   [LABEL]
+  math.divide$if_true0 : 7318   [LABEL]
+  RET_ADDRESS_CALL126  : 7336   [LABEL]
+  math.divide$if_false0 : 7341   [LABEL]
+  RET_ADDRESS_LT19     : 7356   [LABEL]
+  RET_ADDRESS_GT12     : 7371   [LABEL]
+  RET_ADDRESS_GT13     : 7391   [LABEL]
+  RET_ADDRESS_LT20     : 7406   [LABEL]
+  RET_ADDRESS_CALL127  : 7457   [LABEL]
+  RET_ADDRESS_CALL128  : 7498   [LABEL]
+  math.divide$while_exp0 : 7504   [LABEL]
+  RET_ADDRESS_LT21     : 7599   [LABEL]
+  math.divide$if_true1 : 7626   [LABEL]
+  RET_ADDRESS_GT14     : 7790   [LABEL]
+  math.divide$if_true2 : 7817   [LABEL]
+  math.divide$if_false1 : 7839   [LABEL]
+  math.divide$if_false2 : 7839   [LABEL]
+  math.divide$while_end0 : 7841   [LABEL]
+  math.divide$while_exp1 : 7841   [LABEL]
+  RET_ADDRESS_GT15     : 7860   [LABEL]
+  RET_ADDRESS_GT16     : 7909   [LABEL]
+  math.divide$if_true3 : 7919   [LABEL]
+  math.divide$if_false3 : 8015   [LABEL]
+  math.divide$while_end1 : 8039   [LABEL]
+  math.divide$if_true4 : 8054   [LABEL]
+  math.divide$if_false4 : 8071   [LABEL]
+  math.sqrt            : 8080   [LABEL]
+  LOOP_math.sqrt       : 8082   [LABEL]
+  RET_ADDRESS_LT22     : 8104   [LABEL]
+  math.sqrt$if_true0   : 8111   [LABEL]
+  RET_ADDRESS_CALL129  : 8129   [LABEL]
+  math.sqrt$if_false0  : 8134   [LABEL]
+  math.sqrt$while_exp0 : 8146   [LABEL]
+  RET_ADDRESS_GT17     : 8165   [LABEL]
+  RET_ADDRESS_CALL130  : 8249   [LABEL]
+  RET_ADDRESS_GT18     : 8275   [LABEL]
+  RET_ADDRESS_LT23     : 8294   [LABEL]
+  math.sqrt$if_true1   : 8309   [LABEL]
+  math.sqrt$if_false1  : 8324   [LABEL]
+  math.sqrt$while_end0 : 8348   [LABEL]
+  math.max             : 8359   [LABEL]
+  RET_ADDRESS_GT19     : 8377   [LABEL]
+  math.max$if_true0    : 8384   [LABEL]
+  math.max$if_false0   : 8397   [LABEL]
+  math.min             : 8406   [LABEL]
+  RET_ADDRESS_LT24     : 8424   [LABEL]
+  math.min$if_true0    : 8431   [LABEL]
+  math.min$if_false0   : 8444   [LABEL]
+  memory.init          : 8453   [LABEL]
+  memory.peek          : 8558   [LABEL]
+  memory.poke          : 8590   [LABEL]
+  memory.alloc         : 8643   [LABEL]
+  RET_ADDRESS_LT25     : 8662   [LABEL]
+  memory.alloc$if_true0 : 8669   [LABEL]
+  RET_ADDRESS_CALL131  : 8687   [LABEL]
+  memory.alloc$if_false0 : 8692   [LABEL]
+  memory.alloc$while_exp0 : 8704   [LABEL]
+  RET_ADDRESS_LT26     : 8743   [LABEL]
+  memory.alloc$while_end0 : 8787   [LABEL]
+  RET_ADDRESS_GT20     : 8816   [LABEL]
+  memory.alloc$if_true1 : 8823   [LABEL]
+  RET_ADDRESS_CALL132  : 8841   [LABEL]
+  memory.alloc$if_false1 : 8846   [LABEL]
+  RET_ADDRESS_GT21     : 8896   [LABEL]
+  memory.alloc$if_true2 : 8903   [LABEL]
+  RET_ADDRESS_EQ18     : 9056   [LABEL]
+  memory.alloc$if_true3 : 9063   [LABEL]
+  memory.alloc$if_false3 : 9147   [LABEL]
+  memory.alloc$if_end3 : 9227   [LABEL]
+  memory.alloc$if_false2 : 9295   [LABEL]
+  memory.dealloc       : 9357   [LABEL]
+  RET_ADDRESS_EQ19     : 9458   [LABEL]
+  memory.dealloc$if_true0 : 9465   [LABEL]
+  memory.dealloc$if_false0 : 9556   [LABEL]
+  RET_ADDRESS_EQ20     : 9717   [LABEL]
+  memory.dealloc$if_true1 : 9724   [LABEL]
+  memory.dealloc$if_false1 : 9782   [LABEL]
+  memory.dealloc$if_end0 : 9848   [LABEL]
+  memory.dealloc$if_end1 : 9848   [LABEL]
+  output.init          : 9854   [LABEL]
+  RET_ADDRESS_CALL133  : 9915   [LABEL]
+  RET_ADDRESS_CALL134  : 9932   [LABEL]
+  RET_ADDRESS_CALL135  : 9949   [LABEL]
+  output.initmap       : 9960   [LABEL]
+  RET_ADDRESS_CALL136  : 9978   [LABEL]
+  RET_ADDRESS_CALL137  : 10061  [LABEL]
+  RET_ADDRESS_CALL138  : 10128  [LABEL]
+  RET_ADDRESS_CALL139  : 10211  [LABEL]
+  RET_ADDRESS_CALL140  : 10284  [LABEL]
+  RET_ADDRESS_CALL141  : 10367  [LABEL]
+  RET_ADDRESS_CALL142  : 10454  [LABEL]
+  RET_ADDRESS_CALL143  : 10535  [LABEL]
+  RET_ADDRESS_CALL144  : 10620  [LABEL]
+  RET_ADDRESS_CALL145  : 10693  [LABEL]
+  RET_ADDRESS_CALL146  : 10778  [LABEL]
+  RET_ADDRESS_CALL147  : 10863  [LABEL]
+  RET_ADDRESS_CALL148  : 10940  [LABEL]
+  RET_ADDRESS_CALL149  : 11017  [LABEL]
+  RET_ADDRESS_CALL150  : 11090  [LABEL]
+  RET_ADDRESS_CALL151  : 11159  [LABEL]
+  RET_ADDRESS_CALL152  : 11230  [LABEL]
+  RET_ADDRESS_CALL153  : 11309  [LABEL]
+  RET_ADDRESS_CALL154  : 11394  [LABEL]
+  RET_ADDRESS_CALL155  : 11479  [LABEL]
+  RET_ADDRESS_CALL156  : 11564  [LABEL]
+  RET_ADDRESS_CALL157  : 11649  [LABEL]
+  RET_ADDRESS_CALL158  : 11734  [LABEL]
+  RET_ADDRESS_CALL159  : 11819  [LABEL]
+  RET_ADDRESS_CALL160  : 11904  [LABEL]
+  RET_ADDRESS_CALL161  : 11989  [LABEL]
+  RET_ADDRESS_CALL162  : 12074  [LABEL]
+  RET_ADDRESS_CALL163  : 12159  [LABEL]
+  RET_ADDRESS_CALL164  : 12234  [LABEL]
+  RET_ADDRESS_CALL165  : 12311  [LABEL]
+  RET_ADDRESS_CALL166  : 12392  [LABEL]
+  RET_ADDRESS_CALL167  : 12463  [LABEL]
+  RET_ADDRESS_CALL168  : 12544  [LABEL]
+  RET_ADDRESS_CALL169  : 12629  [LABEL]
+  RET_ADDRESS_CALL170  : 12712  [LABEL]
+  RET_ADDRESS_CALL171  : 12797  [LABEL]
+  RET_ADDRESS_CALL172  : 12882  [LABEL]
+  RET_ADDRESS_CALL173  : 12967  [LABEL]
+  RET_ADDRESS_CALL174  : 13052  [LABEL]
+  RET_ADDRESS_CALL175  : 13137  [LABEL]
+  RET_ADDRESS_CALL176  : 13222  [LABEL]
+  RET_ADDRESS_CALL177  : 13307  [LABEL]
+  RET_ADDRESS_CALL178  : 13392  [LABEL]
+  RET_ADDRESS_CALL179  : 13477  [LABEL]
+  RET_ADDRESS_CALL180  : 13562  [LABEL]
+  RET_ADDRESS_CALL181  : 13647  [LABEL]
+  RET_ADDRESS_CALL182  : 13732  [LABEL]
+  RET_ADDRESS_CALL183  : 13817  [LABEL]
+  RET_ADDRESS_CALL184  : 13902  [LABEL]
+  RET_ADDRESS_CALL185  : 13987  [LABEL]
+  RET_ADDRESS_CALL186  : 14072  [LABEL]
+  RET_ADDRESS_CALL187  : 14159  [LABEL]
+  RET_ADDRESS_CALL188  : 14244  [LABEL]
+  RET_ADDRESS_CALL189  : 14329  [LABEL]
+  RET_ADDRESS_CALL190  : 14414  [LABEL]
+  RET_ADDRESS_CALL191  : 14499  [LABEL]
+  RET_ADDRESS_CALL192  : 14584  [LABEL]
+  RET_ADDRESS_CALL193  : 14669  [LABEL]
+  RET_ADDRESS_CALL194  : 14754  [LABEL]
+  RET_ADDRESS_CALL195  : 14839  [LABEL]
+  RET_ADDRESS_CALL196  : 14924  [LABEL]
+  RET_ADDRESS_CALL197  : 15009  [LABEL]
+  RET_ADDRESS_CALL198  : 15088  [LABEL]
+  RET_ADDRESS_CALL199  : 15173  [LABEL]
+  RET_ADDRESS_CALL200  : 15246  [LABEL]
+  RET_ADDRESS_CALL201  : 15315  [LABEL]
+  RET_ADDRESS_CALL202  : 15388  [LABEL]
+  RET_ADDRESS_CALL203  : 15467  [LABEL]
+  RET_ADDRESS_CALL204  : 15552  [LABEL]
+  RET_ADDRESS_CALL205  : 15631  [LABEL]
+  RET_ADDRESS_CALL206  : 15716  [LABEL]
+  RET_ADDRESS_CALL207  : 15795  [LABEL]
+  RET_ADDRESS_CALL208  : 15880  [LABEL]
+  RET_ADDRESS_CALL209  : 15963  [LABEL]
+  RET_ADDRESS_CALL210  : 16048  [LABEL]
+  RET_ADDRESS_CALL211  : 16131  [LABEL]
+  RET_ADDRESS_CALL212  : 16216  [LABEL]
+  RET_ADDRESS_CALL213  : 16301  [LABEL]
+  SCREEN               : 16384  [PREDEFINED]
+  RET_ADDRESS_CALL214  : 16386  [LABEL]
+  RET_ADDRESS_CALL215  : 16465  [LABEL]
+  RET_ADDRESS_CALL216  : 16544  [LABEL]
+  RET_ADDRESS_CALL217  : 16623  [LABEL]
+  RET_ADDRESS_CALL218  : 16704  [LABEL]
+  RET_ADDRESS_CALL219  : 16785  [LABEL]
+  RET_ADDRESS_CALL220  : 16864  [LABEL]
+  RET_ADDRESS_CALL221  : 16943  [LABEL]
+  RET_ADDRESS_CALL222  : 17028  [LABEL]
+  RET_ADDRESS_CALL223  : 17107  [LABEL]
+  RET_ADDRESS_CALL224  : 17186  [LABEL]
+  RET_ADDRESS_CALL225  : 17265  [LABEL]
+  RET_ADDRESS_CALL226  : 17344  [LABEL]
+  RET_ADDRESS_CALL227  : 17425  [LABEL]
+  RET_ADDRESS_CALL228  : 17504  [LABEL]
+  RET_ADDRESS_CALL229  : 17589  [LABEL]
+  RET_ADDRESS_CALL230  : 17674  [LABEL]
+  RET_ADDRESS_CALL231  : 17759  [LABEL]
+  RET_ADDRESS_CALL232  : 17832  [LABEL]
+  output.create        : 17843  [LABEL]
+  RET_ADDRESS_CALL233  : 17865  [LABEL]
+  output.createshiftedmap : 18456  [LABEL]
+  LOOP_output.createshiftedmap : 18458  [LABEL]
+  RET_ADDRESS_CALL234  : 18483  [LABEL]
+  output.createshiftedmap$while_exp0 : 18499  [LABEL]
+  RET_ADDRESS_LT27     : 18517  [LABEL]
+  RET_ADDRESS_CALL235  : 18580  [LABEL]
+  output.createshiftedmap$while_exp1 : 18646  [LABEL]
+  RET_ADDRESS_LT28     : 18665  [LABEL]
+  RET_ADDRESS_CALL236  : 18745  [LABEL]
+  output.createshiftedmap$while_end1 : 18795  [LABEL]
+  RET_ADDRESS_EQ21     : 18811  [LABEL]
+  output.createshiftedmap$if_true0 : 18818  [LABEL]
+  output.createshiftedmap$if_false0 : 18833  [LABEL]
+  output.createshiftedmap$if_end0 : 18857  [LABEL]
+  output.createshiftedmap$while_end0 : 18859  [LABEL]
+  output.getmap        : 18865  [LABEL]
+  RET_ADDRESS_LT29     : 18886  [LABEL]
+  RET_ADDRESS_GT22     : 18903  [LABEL]
+  output.getmap$if_true0 : 18915  [LABEL]
+  output.getmap$if_false0 : 18925  [LABEL]
+  output.getmap$if_true1 : 18938  [LABEL]
+  output.getmap$if_false1 : 18976  [LABEL]
+  output.getmap$if_end1 : 19012  [LABEL]
+  output.drawchar      : 19021  [LABEL]
+  LOOP_output.drawchar : 19023  [LABEL]
+  RET_ADDRESS_CALL237  : 19049  [LABEL]
+  output.drawchar$while_exp0 : 19068  [LABEL]
+  RET_ADDRESS_LT30     : 19085  [LABEL]
+  output.drawchar$if_true0 : 19106  [LABEL]
+  output.drawchar$if_false0 : 19161  [LABEL]
+  output.drawchar$if_end0 : 19210  [LABEL]
+  output.drawchar$while_end0 : 19344  [LABEL]
+  output.movecursor    : 19350  [LABEL]
+  RET_ADDRESS_LT31     : 19365  [LABEL]
+  RET_ADDRESS_GT23     : 19382  [LABEL]
+  RET_ADDRESS_LT32     : 19402  [LABEL]
+  RET_ADDRESS_GT24     : 19424  [LABEL]
+  output.movecursor$if_true0 : 19436  [LABEL]
+  RET_ADDRESS_CALL238  : 19454  [LABEL]
+  output.movecursor$if_false0 : 19459  [LABEL]
+  RET_ADDRESS_CALL239  : 19484  [LABEL]
+  RET_ADDRESS_CALL240  : 19520  [LABEL]
+  RET_ADDRESS_CALL241  : 19572  [LABEL]
+  RET_ADDRESS_EQ22     : 19576  [LABEL]
+  RET_ADDRESS_CALL242  : 19599  [LABEL]
+  output.printchar     : 19610  [LABEL]
+  RET_ADDRESS_CALL243  : 19629  [LABEL]
+  RET_ADDRESS_EQ23     : 19633  [LABEL]
+  output.printchar$if_true0 : 19640  [LABEL]
+  RET_ADDRESS_CALL244  : 19652  [LABEL]
+  output.printchar$if_false0 : 19659  [LABEL]
+  RET_ADDRESS_CALL245  : 19678  [LABEL]
+  RET_ADDRESS_EQ24     : 19682  [LABEL]
+  output.printchar$if_true1 : 19689  [LABEL]
+  RET_ADDRESS_CALL246  : 19701  [LABEL]
+  output.printchar$if_false1 : 19708  [LABEL]
+  RET_ADDRESS_CALL247  : 19727  [LABEL]
+  output.printchar$if_true2 : 19748  [LABEL]
+  output.printchar$if_false2 : 19788  [LABEL]
+  RET_ADDRESS_EQ25     : 19804  [LABEL]
+  output.printchar$if_true3 : 19811  [LABEL]
+  RET_ADDRESS_CALL248  : 19823  [LABEL]
+  output.printchar$if_false3 : 19830  [LABEL]
+  output.printchar$if_end0 : 19844  [LABEL]
+  output.printchar$if_end1 : 19844  [LABEL]
+  output.printchar$if_end3 : 19844  [LABEL]
+  output.printstring   : 19850  [LABEL]
+  RET_ADDRESS_CALL249  : 19876  [LABEL]
+  output.printstring$while_exp0 : 19882  [LABEL]
+  RET_ADDRESS_LT33     : 19900  [LABEL]
+  RET_ADDRESS_CALL250  : 19934  [LABEL]
+  RET_ADDRESS_CALL251  : 19946  [LABEL]
+  output.printstring$while_end0 : 19975  [LABEL]
+  output.printint      : 19981  [LABEL]
+  RET_ADDRESS_CALL252  : 20006  [LABEL]
+  RET_ADDRESS_CALL253  : 20029  [LABEL]
+  output.println       : 20040  [LABEL]
+  RET_ADDRESS_EQ26     : 20110  [LABEL]
+  output.println$if_true0 : 20117  [LABEL]
+  output.println$if_false0 : 20128  [LABEL]
+  output.backspace     : 20134  [LABEL]
+  output.backspace$if_true0 : 20147  [LABEL]
+  RET_ADDRESS_GT25     : 20161  [LABEL]
+  output.backspace$if_true1 : 20168  [LABEL]
+  output.backspace$if_false1 : 20210  [LABEL]
+  RET_ADDRESS_EQ27     : 20237  [LABEL]
+  output.backspace$if_true2 : 20244  [LABEL]
+  output.backspace$if_false2 : 20255  [LABEL]
+  output.backspace$if_end1 : 20277  [LABEL]
+  output.backspace$if_false0 : 20288  [LABEL]
+  output.backspace$if_end0 : 20300  [LABEL]
+  RET_ADDRESS_CALL254  : 20318  [LABEL]
+  screen.init          : 20329  [LABEL]
+  RET_ADDRESS_CALL255  : 20374  [LABEL]
+  screen.init$while_exp0 : 20420  [LABEL]
+  RET_ADDRESS_LT34     : 20437  [LABEL]
+  screen.init$while_end0 : 20592  [LABEL]
+  screen.clearscreen   : 20598  [LABEL]
+  screen.clearscreen$while_exp0 : 20602  [LABEL]
+  RET_ADDRESS_LT35     : 20619  [LABEL]
+  screen.clearscreen$while_end0 : 20695  [LABEL]
+  screen.updatelocation : 20701  [LABEL]
+  screen.updatelocation$if_true0 : 20714  [LABEL]
+  screen.updatelocation$if_false0 : 20798  [LABEL]
+  screen.updatelocation$if_end0 : 20883  [LABEL]
+  screen.setcolor      : 20889  [LABEL]
+  screen.drawpixel     : 20907  [LABEL]
+  LOOP_screen.drawpixel : 20909  [LABEL]
+  RET_ADDRESS_LT36     : 20931  [LABEL]
+  RET_ADDRESS_GT26     : 20948  [LABEL]
+  RET_ADDRESS_LT37     : 20968  [LABEL]
+  RET_ADDRESS_GT27     : 20990  [LABEL]
+  screen.drawpixel$if_true0 : 21002  [LABEL]
+  RET_ADDRESS_CALL256  : 21020  [LABEL]
+  screen.drawpixel$if_false0 : 21025  [LABEL]
+  RET_ADDRESS_CALL257  : 21050  [LABEL]
+  RET_ADDRESS_CALL258  : 21088  [LABEL]
+  RET_ADDRESS_CALL259  : 21124  [LABEL]
+  RET_ADDRESS_CALL260  : 21193  [LABEL]
+  screen.drawconditional : 21204  [LABEL]
+  screen.drawconditional$if_true0 : 21219  [LABEL]
+  RET_ADDRESS_CALL261  : 21245  [LABEL]
+  screen.drawconditional$if_false0 : 21252  [LABEL]
+  RET_ADDRESS_CALL262  : 21278  [LABEL]
+  screen.drawconditional$if_end0 : 21283  [LABEL]
+  screen.drawline      : 21289  [LABEL]
+  LOOP_screen.drawline : 21291  [LABEL]
+  RET_ADDRESS_LT38     : 21313  [LABEL]
+  RET_ADDRESS_GT28     : 21331  [LABEL]
+  RET_ADDRESS_LT39     : 21351  [LABEL]
+  RET_ADDRESS_GT29     : 21375  [LABEL]
+  screen.drawline$if_true0 : 21387  [LABEL]
+  RET_ADDRESS_CALL263  : 21405  [LABEL]
+  screen.drawline$if_false0 : 21410  [LABEL]
+  RET_ADDRESS_CALL264  : 21442  [LABEL]
+  RET_ADDRESS_CALL265  : 21483  [LABEL]
+  RET_ADDRESS_LT40     : 21511  [LABEL]
+  RET_ADDRESS_LT41     : 21551  [LABEL]
+  RET_ADDRESS_LT42     : 21587  [LABEL]
+  screen.drawline$if_true1 : 21604  [LABEL]
+  screen.drawline$if_false1 : 21698  [LABEL]
+  screen.drawline$if_true2 : 21714  [LABEL]
+  RET_ADDRESS_GT30     : 21830  [LABEL]
+  screen.drawline$if_false2 : 21844  [LABEL]
+  RET_ADDRESS_GT31     : 21910  [LABEL]
+  screen.drawline$if_end2 : 21922  [LABEL]
+  RET_ADDRESS_CALL266  : 21948  [LABEL]
+  RET_ADDRESS_CALL267  : 21998  [LABEL]
+  RET_ADDRESS_CALL268  : 22050  [LABEL]
+  RET_ADDRESS_CALL269  : 22097  [LABEL]
+  screen.drawline$while_exp0 : 22102  [LABEL]
+  RET_ADDRESS_LT43     : 22122  [LABEL]
+  RET_ADDRESS_LT44     : 22147  [LABEL]
+  screen.drawline$if_true3 : 22154  [LABEL]
+  screen.drawline$if_false3 : 22189  [LABEL]
+  screen.drawline$if_true4 : 22238  [LABEL]
+  screen.drawline$if_false4 : 22262  [LABEL]
+  screen.drawline$if_end3 : 22284  [LABEL]
+  screen.drawline$if_end4 : 22284  [LABEL]
+  RET_ADDRESS_CALL270  : 22341  [LABEL]
+  screen.drawline$while_end0 : 22348  [LABEL]
+  screen.drawrectangle : 22354  [LABEL]
+  LOOP_screen.drawrectangle : 22356  [LABEL]
+  RET_ADDRESS_GT32     : 22382  [LABEL]
+  RET_ADDRESS_GT33     : 22402  [LABEL]
+  RET_ADDRESS_LT45     : 22422  [LABEL]
+  RET_ADDRESS_GT34     : 22445  [LABEL]
+  RET_ADDRESS_LT46     : 22465  [LABEL]
+  RET_ADDRESS_GT35     : 22489  [LABEL]
+  screen.drawrectangle$if_true0 : 22501  [LABEL]
+  RET_ADDRESS_CALL271  : 22519  [LABEL]
+  screen.drawrectangle$if_false0 : 22524  [LABEL]
+  RET_ADDRESS_CALL272  : 22549  [LABEL]
+  RET_ADDRESS_CALL273  : 22591  [LABEL]
+  RET_ADDRESS_CALL274  : 22634  [LABEL]
+  RET_ADDRESS_CALL275  : 22678  [LABEL]
+  RET_ADDRESS_CALL276  : 22835  [LABEL]
+  screen.drawrectangle$while_exp0 : 22885  [LABEL]
+  RET_ADDRESS_GT36     : 22905  [LABEL]
+  RET_ADDRESS_EQ28     : 22958  [LABEL]
+  screen.drawrectangle$if_true1 : 22965  [LABEL]
+  RET_ADDRESS_CALL277  : 23007  [LABEL]
+  screen.drawrectangle$if_false1 : 23014  [LABEL]
+  RET_ADDRESS_CALL278  : 23042  [LABEL]
+  screen.drawrectangle$while_exp1 : 23069  [LABEL]
+  RET_ADDRESS_LT47     : 23087  [LABEL]
+  RET_ADDRESS_CALL279  : 23122  [LABEL]
+  screen.drawrectangle$while_end1 : 23151  [LABEL]
+  RET_ADDRESS_CALL280  : 23179  [LABEL]
+  screen.drawrectangle$if_end1 : 23184  [LABEL]
+  screen.drawrectangle$while_end0 : 23245  [LABEL]
+  screen.drawhorizontal : 23251  [LABEL]
+  LOOP_screen.drawhorizontal : 23253  [LABEL]
+  RET_ADDRESS_CALL281  : 23287  [LABEL]
+  RET_ADDRESS_CALL282  : 23326  [LABEL]
+  RET_ADDRESS_GT37     : 23357  [LABEL]
+  RET_ADDRESS_LT48     : 23374  [LABEL]
+  RET_ADDRESS_LT49     : 23398  [LABEL]
+  RET_ADDRESS_GT38     : 23424  [LABEL]
+  screen.drawhorizontal$if_true0 : 23436  [LABEL]
+  RET_ADDRESS_CALL283  : 23461  [LABEL]
+  RET_ADDRESS_CALL284  : 23500  [LABEL]
+  RET_ADDRESS_CALL285  : 23539  [LABEL]
+  RET_ADDRESS_CALL286  : 23579  [LABEL]
+  RET_ADDRESS_CALL287  : 23623  [LABEL]
+  RET_ADDRESS_CALL288  : 23665  [LABEL]
+  RET_ADDRESS_CALL289  : 23820  [LABEL]
+  RET_ADDRESS_EQ29     : 23915  [LABEL]
+  screen.drawhorizontal$if_true1 : 23922  [LABEL]
+  RET_ADDRESS_CALL290  : 23964  [LABEL]
+  screen.drawhorizontal$if_false1 : 23971  [LABEL]
+  RET_ADDRESS_CALL291  : 23999  [LABEL]
+  screen.drawhorizontal$while_exp0 : 24026  [LABEL]
+  RET_ADDRESS_LT50     : 24046  [LABEL]
+  RET_ADDRESS_CALL292  : 24081  [LABEL]
+  screen.drawhorizontal$while_end0 : 24110  [LABEL]
+  RET_ADDRESS_CALL293  : 24140  [LABEL]
+  screen.drawhorizontal$if_end1 : 24145  [LABEL]
+  screen.drawhorizontal$if_false0 : 24145  [LABEL]
+  screen.drawsymetric  : 24151  [LABEL]
+  RET_ADDRESS_CALL294  : 24224  [LABEL]
+  RET_ADDRESS_CALL295  : 24302  [LABEL]
+  RET_ADDRESS_CALL296  : 24381  [LABEL]
+  RET_ADDRESS_CALL297  : 24460  [LABEL]
+  screen.drawcircle    : 24471  [LABEL]
+  LOOP_screen.drawcircle : 24473  [LABEL]
+  RET_ADDRESS_LT51     : 24495  [LABEL]
+  RET_ADDRESS_GT39     : 24512  [LABEL]
+  RET_ADDRESS_LT52     : 24532  [LABEL]
+  RET_ADDRESS_GT40     : 24554  [LABEL]
+  screen.drawcircle$if_true0 : 24566  [LABEL]
+  KBD                  : 24576  [PREDEFINED]
+  RET_ADDRESS_CALL298  : 24584  [LABEL]
+  screen.drawcircle$if_false0 : 24589  [LABEL]
+  RET_ADDRESS_LT53     : 24617  [LABEL]
+  RET_ADDRESS_GT41     : 24647  [LABEL]
+  RET_ADDRESS_LT54     : 24680  [LABEL]
+  RET_ADDRESS_GT42     : 24715  [LABEL]
+  screen.drawcircle$if_true1 : 24727  [LABEL]
+  RET_ADDRESS_CALL299  : 24745  [LABEL]
+  screen.drawcircle$if_false1 : 24750  [LABEL]
+  RET_ADDRESS_CALL300  : 24828  [LABEL]
+  screen.drawcircle$while_exp0 : 24833  [LABEL]
+  RET_ADDRESS_GT43     : 24851  [LABEL]
+  RET_ADDRESS_LT55     : 24875  [LABEL]
+  screen.drawcircle$if_true2 : 24882  [LABEL]
+  RET_ADDRESS_CALL301  : 24915  [LABEL]
+  screen.drawcircle$if_false2 : 24940  [LABEL]
+  RET_ADDRESS_CALL302  : 24985  [LABEL]
+  screen.drawcircle$if_end2 : 25030  [LABEL]
+  RET_ADDRESS_CALL303  : 25092  [LABEL]
+  screen.drawcircle$while_end0 : 25099  [LABEL]
+  string.new           : 25105  [LABEL]
+  RET_ADDRESS_CALL304  : 25123  [LABEL]
+  RET_ADDRESS_LT56     : 25143  [LABEL]
+  string.new$if_true0  : 25150  [LABEL]
+  RET_ADDRESS_CALL305  : 25168  [LABEL]
+  string.new$if_false0 : 25173  [LABEL]
+  RET_ADDRESS_GT44     : 25188  [LABEL]
+  string.new$if_true1  : 25195  [LABEL]
+  RET_ADDRESS_CALL306  : 25214  [LABEL]
+  string.new$if_false1 : 25220  [LABEL]
+  string.dispose       : 25252  [LABEL]
+  RET_ADDRESS_GT45     : 25279  [LABEL]
+  string.dispose$if_true0 : 25286  [LABEL]
+  RET_ADDRESS_CALL307  : 25305  [LABEL]
+  string.dispose$if_false0 : 25310  [LABEL]
+  RET_ADDRESS_CALL308  : 25328  [LABEL]
+  string.length        : 25339  [LABEL]
+  string.charat        : 25361  [LABEL]
+  RET_ADDRESS_LT57     : 25388  [LABEL]
+  RET_ADDRESS_GT46     : 25407  [LABEL]
+  RET_ADDRESS_EQ30     : 25431  [LABEL]
+  string.charat$if_true0 : 25443  [LABEL]
+  RET_ADDRESS_CALL309  : 25461  [LABEL]
+  string.charat$if_false0 : 25466  [LABEL]
+  string.setcharat     : 25499  [LABEL]
+  RET_ADDRESS_LT58     : 25526  [LABEL]
+  RET_ADDRESS_GT47     : 25545  [LABEL]
+  RET_ADDRESS_EQ31     : 25569  [LABEL]
+  string.setcharat$if_true0 : 25581  [LABEL]
+  RET_ADDRESS_CALL310  : 25599  [LABEL]
+  string.setcharat$if_false0 : 25604  [LABEL]
+  string.appendchar    : 25659  [LABEL]
+  RET_ADDRESS_EQ32     : 25690  [LABEL]
+  string.appendchar$if_true0 : 25697  [LABEL]
+  RET_ADDRESS_CALL311  : 25715  [LABEL]
+  string.appendchar$if_false0 : 25720  [LABEL]
+  string.eraselastchar : 25801  [LABEL]
+  RET_ADDRESS_EQ33     : 25829  [LABEL]
+  string.eraselastchar$if_true0 : 25836  [LABEL]
+  RET_ADDRESS_CALL312  : 25854  [LABEL]
+  string.eraselastchar$if_false0 : 25859  [LABEL]
+  string.intvalue      : 25889  [LABEL]
+  LOOP_string.intvalue : 25891  [LABEL]
+  RET_ADDRESS_EQ34     : 25926  [LABEL]
+  string.intvalue$if_true0 : 25933  [LABEL]
+  string.intvalue$if_false0 : 25939  [LABEL]
+  RET_ADDRESS_EQ35     : 25992  [LABEL]
+  string.intvalue$if_true1 : 25999  [LABEL]
+  string.intvalue$if_false1 : 26025  [LABEL]
+  string.intvalue$while_exp0 : 26025  [LABEL]
+  RET_ADDRESS_LT59     : 26044  [LABEL]
+  RET_ADDRESS_LT60     : 26131  [LABEL]
+  RET_ADDRESS_GT48     : 26149  [LABEL]
+  string.intvalue$if_true2 : 26181  [LABEL]
+  RET_ADDRESS_CALL313  : 26206  [LABEL]
+  string.intvalue$if_false2 : 26247  [LABEL]
+  string.intvalue$while_end0 : 26249  [LABEL]
+  string.intvalue$if_true3 : 26265  [LABEL]
+  string.intvalue$if_false3 : 26282  [LABEL]
+  string.setint        : 26291  [LABEL]
+  LOOP_string.setint   : 26293  [LABEL]
+  RET_ADDRESS_EQ36     : 26327  [LABEL]
+  string.setint$if_true0 : 26334  [LABEL]
+  RET_ADDRESS_CALL314  : 26352  [LABEL]
+  string.setint$if_false0 : 26357  [LABEL]
+  RET_ADDRESS_CALL315  : 26375  [LABEL]
+  RET_ADDRESS_LT61     : 26397  [LABEL]
+  string.setint$if_true1 : 26404  [LABEL]
+  string.setint$if_false1 : 26436  [LABEL]
+  string.setint$while_exp0 : 26449  [LABEL]
+  RET_ADDRESS_GT49     : 26464  [LABEL]
+  RET_ADDRESS_CALL316  : 26497  [LABEL]
+  RET_ADDRESS_CALL317  : 26561  [LABEL]
+  string.setint$while_end0 : 26630  [LABEL]
+  string.setint$if_true2 : 26646  [LABEL]
+  string.setint$if_false2 : 26716  [LABEL]
+  RET_ADDRESS_LT62     : 26734  [LABEL]
+  string.setint$if_true3 : 26741  [LABEL]
+  RET_ADDRESS_CALL318  : 26759  [LABEL]
+  string.setint$if_false3 : 26764  [LABEL]
+  RET_ADDRESS_EQ37     : 26779  [LABEL]
+  string.setint$if_true4 : 26786  [LABEL]
+  string.setint$if_false4 : 26843  [LABEL]
+  string.setint$while_exp1 : 26854  [LABEL]
+  RET_ADDRESS_LT63     : 26873  [LABEL]
+  string.setint$if_end4 : 27003  [LABEL]
+  string.setint$while_end1 : 27003  [LABEL]
+  RET_ADDRESS_CALL319  : 27023  [LABEL]
+  string.newline       : 27034  [LABEL]
+  string.backspace     : 27042  [LABEL]
+  string.doublequote   : 27050  [LABEL]
+  sys.init             : 27058  [LABEL]
+  RET_ADDRESS_CALL320  : 27070  [LABEL]
+  RET_ADDRESS_CALL321  : 27087  [LABEL]
+  RET_ADDRESS_CALL322  : 27104  [LABEL]
+  RET_ADDRESS_CALL323  : 27121  [LABEL]
+  RET_ADDRESS_CALL324  : 27138  [LABEL]
+  RET_ADDRESS_CALL325  : 27155  [LABEL]
+  RET_ADDRESS_CALL326  : 27172  [LABEL]
+  sys.halt             : 27177  [LABEL]
+  sys.halt$while_exp0  : 27177  [LABEL]
+  sys.halt$while_end0  : 27194  [LABEL]
+  sys.wait             : 27194  [LABEL]
+  RET_ADDRESS_LT64     : 27213  [LABEL]
+  sys.wait$if_true0    : 27220  [LABEL]
+  RET_ADDRESS_CALL327  : 27236  [LABEL]
+  sys.wait$if_false0   : 27241  [LABEL]
+  sys.wait$while_exp0  : 27241  [LABEL]
+  RET_ADDRESS_GT50     : 27256  [LABEL]
+  sys.wait$while_exp1  : 27276  [LABEL]
+  RET_ADDRESS_GT51     : 27291  [LABEL]
+  sys.wait$while_end1  : 27323  [LABEL]
+  sys.wait$while_end0  : 27347  [LABEL]
+  sys.error            : 27353  [LABEL]
+  RET_ADDRESS_CALL328  : 27371  [LABEL]
+  RET_ADDRESS_CALL329  : 27389  [LABEL]
+  RET_ADDRESS_CALL330  : 27407  [LABEL]
+  RET_ADDRESS_CALL331  : 27425  [LABEL]
+  RET_ADDRESS_CALL332  : 27437  [LABEL]
+  RET_ADDRESS_CALL333  : 27461  [LABEL]
+  RET_ADDRESS_CALL334  : 27478  [LABEL]
